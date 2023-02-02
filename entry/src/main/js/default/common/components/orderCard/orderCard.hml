@@ -1,0 +1,64 @@
+<div class="car orderItem" click-effect="spring-large">
+<!--  店名  -->
+    <div class="itemTop"  @click="toOrderDetailPage">
+        <div>
+            <label style=" letter-spacing : 4px; ">{{"KIWI堡堡餐厅"}}</label>
+            <text class="addressLeftPopup" style="font-size: 24px;">{{order.shop_type==="OUT"?'外卖':'到店取餐'}}</text>
+        </div>
+        <text style="color: #ffff1616;" if="{{order_state === 1}}">{{"待支付"}}</text>
+        <text if="{{order_state === 2}}">{{"已支付"}}</text>
+        <text if="{{order_state === 3}}">{{"待取餐"}}</text>
+        <text if="{{order_state === 4}}">{{"已完成"}}</text>
+        <text if="{{order_state === 5}}">{{"已取消"}}</text>
+        <text if="{{order_state === 6}}">{{"已评价"}}</text>
+    </div>
+<!--  商品列表  -->
+    <div class="itemCenter"  @click="toOrderDetailPage">
+        <div class="centerLeft">
+            <list  scrollpage="false" style="flex-direction: row;">
+                <list-item class="goods" for="{{(i, p) in goods_list}}" tid="{{i}}" if="{{p && p.sum>0}}" clickeffect="false">
+                    <image src="https://www.kiwi2333.top/wp-content/gallery/goods/{{p.item.imgUrl}}" class="goodsImage"></image>
+                    <label if="{{p.item}}">{{p.item.good_name}}</label>
+                </list-item>
+            </list>
+        </div>
+        <div class="centerRight">
+            <label style="font-size: 30px;font-weight: 700;margin-bottom: 20px;">￥{{order.pay_price}}</label>
+            <text style="font-size: 20px;">共{{ getCountGoods() }}件</text>
+        </div>
+    </div>
+<!--  按钮类别  -->
+    <div class="itemBottom" if="{{order_state === 1 }}">
+        <div click-effect="spring-small"  @click="deleteOrder">
+            <image src="/common/icon/delete_icon.png"></image>
+            <text style="font-size: 24px;">删除</text>
+        </div>
+        <div>
+            <button class="cancelOrder" @click="cancelOrder">{{"取消订单"}}</button>
+            <button @click="toPay">{{"去支付"}}</button>
+        </div>
+    </div>
+    <div class="itemBottom" if="{{order_state === 2}}">
+        <div></div>
+        <button @click="sureOrder">{{"确认取餐"}}</button>
+    </div>
+    <div class="itemBottom" if="{{order_state === 3}}">
+        <div></div>
+        <button @click="sureOrder">{{"确认取餐"}}</button>
+    </div>
+    <div class="itemBottom" if="{{order_state === 4 && !isEase}}" >
+<!--        <button class="cancelOrder" @click="deleteOrder">{{"删除订单"}}</button>-->
+        <div click-effect="spring-small" @click="deleteOrder">
+            <image src="/common/icon/delete_icon.png"></image>
+            <text style="font-size: 24px;">删除</text>
+        </div>
+        <button @click="toComment">{{"评论"}}</button>
+    </div>
+    <div class="itemBottom" if="{{order_state === 5 || order_state === 6}}">
+        <div click-effect="spring-small"  @click="deleteOrder">
+            <image src="/common/icon/delete_icon.png"></image>
+            <text style="font-size: 24px;">删除</text>
+        </div>
+        <button @click="retoOrder">{{"重新下单"}}</button>
+    </div>
+</div>

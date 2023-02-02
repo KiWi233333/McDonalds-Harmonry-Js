@@ -1,0 +1,20 @@
+[2022-11-06T12:46:07.298] [INFO] [16136] - entered into codelinter 1.0.0 with node v14.19.1
+
+[2022-11-06T12:46:07.302] [INFO] [16136] - configPath to be applied: C:/Program Files/Huawei/DevEco Studio 3.0.0.993/plugins/codelinter/ruleConfig_base.json
+
+[2022-11-06T12:46:07.303] [INFO] [16136] - 1 filepaths to be checked
+
+[2022-11-06T12:46:07.304] [WARN] [16136] - invalid files count: 1
+
+[2022-11-06T12:46:07.305] [INFO] [16136] - building ESLint options for js
+
+[2022-11-06T12:46:07.307] [INFO] [16136] - 1 groups to be checked
+
+[2022-11-06T12:46:07.308] [INFO] [16136] - start lint runner
+
+[2022-11-06T12:46:07.916] [INFO] [16136] - 0 issues found
+
+[2022-11-06T12:46:07.920] [INFO] [16136] - report succeed
+
+[2022-11-06T12:46:07.921] [INFO] [16136] - 0
+

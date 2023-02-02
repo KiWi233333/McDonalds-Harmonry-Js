@@ -1,0 +1,45 @@
+<div class="container">
+    <image @click="toBackRouter" src="../../common/icon/back_icon.png" class="backRouter"></image>
+    <image src="/common/images/burger-baner.png" class="topBg"></image>
+    <label class="title">个人信息</label>
+
+    <!-- 输入框   -->
+    <div class="inputs">
+        <div class="input">
+            <input @change="changeNckName" type="text" placeholder="用户名" disabled="{{ isDisable }}"
+                   value="{{ userDetail.nickName }}"></input>
+            <image src="../../common/icon/user_icon.png"></image>
+        </div>
+        <div class="input">
+            <input @change="changePhone" type="text" placeholder="手机号" disabled="true"
+                   value="{{ userDetail.phonenumber }}"></input>
+            <image src="../../common/icon/user_icon.png"></image>
+        </div>
+        <text class="checkTips">{{ toast.phone }}</text>
+        <div class="input">
+            <input @change="changePwd" type="password" placeholder="旧密码" disabled="{{ isDisable }}"></input>
+            <image src="../../common/icon/pwd_icon.png"></image>
+        </div>
+        <text class="checkTips">{{ toast.password }}</text>
+        <div class="input">
+            <input @change="changePwd1" type="password" placeholder="新密码" disabled="{{ isDisable }}"></input>
+            <image src="../../common/icon/pwd_icon.png"></image>
+        </div>
+        <text class="checkTips">{{ toast.password1 }}</text>
+        <div class="input">
+            <input @change="changePwd2" type="password" placeholder="确认密码" disabled="{{ isDisable }}"></input>
+            <image src="../../common/icon/pwd_icon.png"></image>
+        </div>
+        <text class="checkTips">{{ toast.checkPassword }}</text>
+        <div class="input">
+            <input @change="changeEmail" type="email" placeholder="邮箱（可选）" disabled="{{ isDisable }}"
+                   value="{{ userDetail.email }}"></input>
+            <image src="../../common/icon/email_icon.png"></image>
+        </div>
+        <text class="checkTips">{{ toast.email }}</text>
+    </div>
+    <div class="submitBtns">
+        <button @click="submitBtn" class="submitBtn">保存</button>
+        <button @click="openEditOC" class="editBtn" disabled="{{ ! isDisable }}">编辑</button>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+<element src="../../common/components/goodCar/goodCar.hml" name="goodCar"></element>
+<element src="../../common/components/addressCard/addressCard.hml" name="addressCard"></element>
+
+
+<div class="container">
+<!--  顶部导航条  -->
+    <div class="top">
+        <image src="/common/icon/back_icon3.png" @click="toBack" style="transform: rotate(180deg);"></image>
+        <text>订单确认</text>
+    </div>
+<!--  地址栏  -->
+    <div class="topAddress car">
+        <div class="AddressContain">
+            <div class="addressLeft" if="{{shopType==='OUT'}}">
+                <div id="address" class="address">
+                    <text style="font-size : 30px; font-weight: 700;">{{ nowAddressItem.address }}</text>
+                    <div style="font-size: 24px;margin-top: 10px;color: #ff404040;line-height: 30px;">
+                        <text>{{ nowAddressItem.name+"  " }}</text>
+                        <text>{{ nowAddressItem.phone }}</text>
+                    </div>
+                </div>
+                <text class="addressLeftPopup" style="font-size: 24px;">请确认配送地址及联系方式</text>
+            </div>
+            <div class="addressLeft"  if="{{shopType==='IN'}}">
+                <label style="font-size : 42px; font-weight: 700;letter-spacing: 5px;" id="address">{{ "KiWi 汉堡餐厅" }}</label>
+                <text class="addressLeftPopup" style="font-size: 24px;">请确认取餐餐厅</text>
+            </div>
+            <div class="addressRight" if="{{shopType==='OUT'}}">
+                <text class="changAddress" style="font-size: 22px;">更改地址</text>
+                <div class="addressIconBox" @click="{{ showAddressPanel('addressListPanel') }}"  click-effect="spring-small"><image src="/common/icon/address_icon.png" class="addressIcon"></image></div>
+            </div>
+        </div>
+        <div class="addressBottom" if="{{shopType==='OUT'}}"><label>尽快送达</label></div>
+        <div class="addressBottom" else><label>到店自取</label></div>
+    </div>
+<!--  商品列表-->
+    <div class="centerGoodList car">
+        <label class="title">餐品详情</label>
+            <div class="content">
+                <list class="centerRight shopCarList" scrollpage="false" scrolleffect="spring"
+                      scrollbar="off">
+                <!-- 单一商品 -->
+                    <list-item for="(i, item) in goodsList" tid="item.good_id" clickeffect="false" show="{{shopCarData.shop_all_goods[i] ? (shopCarData.shop_all_goods[i].item.good_id === item.good_id && shopCarData.shop_all_goods[i].sum > 0) : false }}">
+                    <!-- 商品列表 -->
+                        <goodcar item="{{ item }}" index="{{ i }}"
+                                 is-edit-shop-car="{{ isEditShopCar }}"
+                                 shop_all_goods="{{ shopCarData.shop_all_goods }}"></goodcar>
+                    </list-item>
+                </list>
+            </div>
+        <div class="bottom">
+            <text>商品小计</text>
+            <text>￥{{ allGoodsPrice }}</text>
+        </div>
+        <div class="bottom" click-effect="spring-large" if="{{ShippingFees!==0}}">
+            <text>配送费</text>
+            <text>￥{{ ShippingFees }}</text>
+        </div>
+        <div class="bottom"  click-effect="spring-large">
+            <text>优惠卷</text>
+            <div>
+                <text>￥{{ CouponCoupons }}</text>
+                <image class="icon" src="/common/icon/back_icon3.png"></image>
+            </div>
+        </div>
+        <div style="font-size : 22px; padding : 15px 0;">
+            <text>已经优惠</text>
+            <text style="color : red; padding : 0 5px;">{{CouponCoupons}}</text>
+            <text>元</text>
+        </div>
+    </div>
+<!--  支付按钮条  -->
+    <div class="shopBottom" click-effect="spring-large">
+        <div class="bottomTop">
+            <div class="smallTextSt" if="{{CouponCoupons !== 0}}">
+                <text>已经优惠</text>
+                <text style="color : red; padding : 0 5px;">{{CouponCoupons}}</text>
+                <text>元</text>
+            </div>
+            <div class="smallTextSt" else>
+                <text>暂无优惠</text>
+            </div>
+            <div class="bottomBottom">
+                <div class="title" style="color : #fff;">
+                    <text style="font-size: 22px;font-weight: 500;">合计￥ </text>
+                    <text style="font-size: 42px;">{{ getFinalPrice() }}</text>
+                </div>
+                <button class="shopCarBtn" @click="toPay" style="text-color: #ff242424;">去支付</button>
+            </div>
+        </div>
+    </div>
+
+<!--  ---------弹窗--------  -->
+<!--  地址列表弹窗  -->
+    <dialog id="addressListPanel" class="addressListPanel" @cancel="{{ closeAddressPanel('addressListPanel') }}">
+        <div class="addressListItem">
+        <!--  顶部导航条  -->
+            <div class="panelTop">
+                <image src="/common/icon/close_icon.png" @click="{{ closeAddressPanel('addressListPanel') }}"
+                       style="height:100%;position : absolute;top: 0; right: 0px;padding: 10px;"></image>
+                <text style="height: 100%;font-size: 28px; font-weight: 600;">选择地址</text>
+            </div>
+        <!--  地址列表    -->
+            <div class="center">
+            <!--  地址列表  -->
+                <list class="addressList">
+                <!--  顶置默认地址  -->
+                    <list-item @click="{{changeNowAddress(i,item)}}" clickeffect="false" for="{{ (i, item) in addressList }}" if="{{ item.default && item.name!=='' }}"  click-effect="spring-medium">
+                        <addresscard item="{{item}}"></addresscard>
+                    </list-item>
+                    <list-item @click="{{changeNowAddress(i,item)}}"  clickeffect="false" for="{{ (i, item) in addressList }}" if="{{ (!item.default) && item.name!=='' }}" click-effect="spring-medium">
+                        <addresscard item="{{item}}"></addresscard>
+                    </list-item>
+                </list>
+            </div>
+        </div>
+    </dialog>
+<!--  下单弹窗  -->
+    <dialog id="createOrderLoading" class="createOrderLoading">
+        <div class="LoadingBox">
+            <label style="padding: 40px 0;">正在下单</label>
+        </div>
+    </dialog>
+<!--  支付弹窗  -->
+    <dialog id="payFrom" @cancel="cancelPay">
+        <div class="payFromBox">
+        <!--  顶部导航条  -->
+            <div class="panelTop">
+                <image src="/common/icon/close_icon2.png" @click="cancelPay"
+                       style="height:100%;position : absolute;top: 0; right: 0px;padding: 10px;object-fit: contain;"></image>
+                <text style="height: 100%;font-size: 32px; font-weight: 700;">支付详情</text>
+            </div>
+            <div class="priceBox"><text style="font-size: 42px;">￥</text><label>{{getFinalPrice()}}</label></div>
+            <div class="bottom">
+                <label style="text-align: center;padding:10px 0;font-size: 26px;width: 100%;">选择支付方式</label>
+                <div class="payItem">
+                    <div>
+                        <text class="card">钱包</text>
+                        <text style="line-height: 50px;color: gray;">（余额:{{balance}}）</text>
+                    </div>
+                    <input type="radio" checked="true" value="1"></input>
+                </div>
+            </div>
+            <button @click="toPaying" class="btn shopCarBtn" style="text-color: #ff242424;" disabled="{{!payFrom.isCanPay}}">{{payFrom.btnTip}}</button>
+        </div>
+    </dialog>
+<!--  支付中弹窗  -->
+    <div class="logBg" if="{{ payingFrom.state }}">
+        <div class="LogState">
+            <div class="LoadingBox" if="{{ payingFrom.state }}">
+                <label style="padding: 40px 0;">支付中</label>
+            </div>
+        </div>
+    </div>
+<!--  支付完成弹窗  -->
+    <div class="logBg" if="{{ paidFrom.state }}">
+        <div class="LogState">
+            <div class="LoadingBoxSuccess"  
+                 if="{{ paidFrom.state }}"
+                 style="padding-bottom: 30px;background-image: url({{paidFrom.url}});">
+                <label >{{paidFrom.message}}</label>
+            </div>
+        </div>
+    </div>
+</div>

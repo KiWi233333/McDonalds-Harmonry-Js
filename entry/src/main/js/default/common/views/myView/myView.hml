@@ -1,0 +1,74 @@
+<div class="context context4">
+    <image src="/common/images/burger-baner.png" class="myTip"></image>
+    <image src="/common/raw/shining-stars.gif" class="myTip2"></image>
+
+<!--  1 登录前  -->
+    <div class="myTop" if="{{ ! isLoginState }}">
+        <label>欢迎您！</label>
+        <text>期待着你每次的到来~</text>
+        <button class="loginBtn" @click="toLoginPage" click-effect="spring-small">立即登录</button>
+    </div>
+
+<!--  2 登录后  -->
+<!--  头像加id  -->
+    <div class="myTop2" if="{{ isLoginState }}" click-effect="spring-medium" @click="toMyInfoPage">
+        <image class="userImg" src="{{userDetail.avatar}}"></image>
+        <div class="myTopCenter">
+            <label>{{ userDetail.nickName }}</label>
+            <text>ID: {{ userDetail.userName }}</text>
+        </div>
+    </div>
+<!-- 钱包卡片 -->
+    <div class="moneysCar" if="{{ isLoginState }}">
+        <div class="cars" click-effect="spring-small">
+            <image src="/common/images/burger-baner.png"></image>
+            <div @click="toCardPackPage">
+                <label>优惠卡</label>
+                <text>查看你的优惠卷</text>
+            </div>
+        </div>
+        <div class="moneys">
+            <text>余额</text>
+            <div>
+                <text>￥</text>
+                <label>{{ userDetail.balance }}</label>
+            </div>
+        </div>
+        <div class="purseCar" @click="toBalancePage" click-effect="spring-small">
+            <image src="/common/icon/coins_icon.png"></image>
+            <text>钱包</text>
+        </div>
+    </div>
+<!--  我的订单和地址管理  -->
+    <div class="myCenter">
+        <div class="myOrders" @click="toOrder" click-effect="spring-small">
+            <label>我的订单</label>
+            <text>查看最近的订单</text>
+            <image src="/common/icon/onOrder_icon.png"></image>
+        </div>
+        <div class="vr"></div>
+        <div class="myCollect" @click="toAddress" click-effect="spring-small">
+            <label>地址管理</label>
+            <text>管理你的地址</text>
+            <image src="/common/icon/collect_icon.png"></image>
+        </div>
+    </div>
+    <div class="myBottom" if="{{ isLoginState }}">
+        <div class="myInfo" @click="toMyInfoPage()" click-effect="spring-small" >
+            <label>个人信息</label>
+            <image src="/common/icon/next_icon.png"></image>
+        </div>
+        <div class="myAddress" click-effect="spring-large" @click="toAddressPage">
+            <label>我的地址</label>
+            <image src="/common/icon/next_icon.png"></image>
+        </div>
+        <div class="mySettings" click-effect="spring-large">
+            <label>设置</label>
+            <image src="/common/icon/next_icon.png"></image>
+        </div>
+        <button class="loginBtn exitBtn" @click="exitLoginState" click-effect="spring-small">退出登录</button>
+    </div>
+    <div class="myBottomOld" if="{{ ! isLoginState }}">
+        <label>——— 登录了解更多 ———</label>
+    </div>
+</div>

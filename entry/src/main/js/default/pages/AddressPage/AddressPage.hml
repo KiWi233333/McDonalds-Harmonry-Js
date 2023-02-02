@@ -1,0 +1,64 @@
+<element src="../../common/components/addressCard/addressCard.hml" name="addressCard"></element>
+
+<div class="container">
+
+<!--  请求动画  -->
+    <div class="LoadingBox" show="{{ isHttpAnim }}"></div>
+
+<!--  顶部导航条  -->
+    <div class="top">
+        <image src="/common/icon/back_icon3.png" @click="toBack"
+               style="transform : rotate(180deg); position : absolute;left: 10px;height: 100%;object-fit: contain;"></image>
+        <text>地址管理</text>
+    </div>
+
+<!--  地址列表  -->
+    <div class="center">
+        <list class="addressList car"  if="{{ !isHttpAnim }}" >
+        <!--  顶置默认地址  -->
+            <list-item @click="{{ showUpdateAddressFrom(i,item) }}" clickeffect="false" for="{{ (i, item) in addressList }}" if="{{ item.default && item.name!=='' }}"  click-effect="spring-medium">
+                <addresscard item="{{item}}"></addresscard>
+            </list-item>
+            <list-item @click="{{ showUpdateAddressFrom(i,item) }}"  clickeffect="false" for="{{ (i, item) in addressList }}" if="{{ (!item.default) && item.name!=='' }}" click-effect="spring-medium">
+                <addresscard item="{{item}}"></addresscard>
+            </list-item>
+        </list>
+    </div>
+    <button class="bottom" @click="showAddressFrom" click-effect="spring-medium">+ 添加收货地址</button>
+
+<!-- 添加/更新 收货地址 -->
+    <dialog id="addressFrom" class="addressFrom" @cancel="closeAddressFromPanel">
+        <div class="from">
+            <div class="fromTop">
+                <label>编辑地址</label>
+                <image @click="closeAddressFromPanel" src="/common/icon/close_icon.png" class="closeBtn"></image>
+            </div>
+            <!-- 表单 -->
+            <div class="fromCenter">
+                <div class="inputBox">
+                    <text>联系人</text>
+                    <input value="{{fromData.name}}" @change="changeName" type="text" placeholder="请填写联系人的姓名"></input>
+                </div>
+                <div class="inputBox">
+                    <text>手机号</text>
+                    <input value="{{fromData.phone}}" @change="changePhone" type="number" placeholder="请填写收货号码"></input>
+                </div>
+                <div class="inputBox">
+                    <text>地&emsp;址</text>
+                    <input id="address" value="{{fromData.address}}" @change="changeAddress" type="text" placeholder="请输入详细地址"></input>
+                </div>
+                <div class="inputBox switchBox">
+                    <text>设为默认地址</text>
+                    <switch checked="{{fromData.default}}"  @change="changeDefault" class="defaultSwitch"></switch>
+                </div>
+                <div class="bottomBtn">
+                    <button click-effect="spring-large"
+                            class="submitBtn"
+                            disabled="{{!isFromEdit}}"
+                            @click="addAddressItem">保&nbsp;存</button>
+                    <image @click="deleteAddressItem" src="/common/icon/delete_icon.png" click-effect="spring-small"></image>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>

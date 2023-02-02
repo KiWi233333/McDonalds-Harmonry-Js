@@ -1,0 +1,19 @@
+<element src="../../common/components/steppers/steppers.hml" name="steppers"></element>
+
+<div class="container">
+    <div if="{{!isStepper}}">
+        <steppers></steppers>
+    </div>
+    <div class="banner" else>
+        <image src="../../common/images/guide_bg2.jpg" class="bg"></image>
+        <div class="topTip" @click="toIndexPage">
+            <text>{{ time }} s 跳转</text>
+        </div>
+        <div class="title">
+            <text class="titleTop title"></text>
+        </div>
+        <div class="bottom">
+            <button @click="toIndexPage" icon="/common/icon/left_icon.png">立即前往</button>
+        </div>
+    </div>
+</div>

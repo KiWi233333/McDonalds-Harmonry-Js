@@ -1,0 +1,214 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    scrollbar-color: #00ffffff;
+}
+
+/* 商品内容*/
+.shopCenter {
+    display: flex;
+    flex-direction: column;
+    margin-top: -30px;
+    width: 100%;
+    border-radius: 0 0 26px 26px;
+    background-color: #fff;
+}
+/*商品详细信息*/
+.centerDetail {
+    width: 100%;
+}
+.centerLeft {
+    background-color: #fff;
+    width: 20%;
+    box-shadow: 5px 5px 16px #eee;
+    border-radius: 0 26px;
+    margin-top: 100px;
+}
+.centerLeft .menuItem {
+    width: 100%;
+    flex-weight: 1;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+.menuItem:active {
+    background-color: #eee;
+    color: brown;
+}
+.menuItem image {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+.menuItem text {
+    width: 100%;
+    text-align: center;
+}
+
+
+.centerRight {
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+.centerRight .goodsItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom:  1px solid #998d8d8d;
+}
+.goodsList {
+    display: flex;
+    flex-direction: column;
+    columns: 1;
+    justify-content: center;
+    align-items: center;
+}
+.goodsItem image {
+    width: 180px;
+    height: 160px;
+    object-fit: cover;
+}
+.goodsItem .center {
+    width: 60%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.center .detail {
+    font-size: 18px;
+    height: 50px;
+    width: 100%;
+    color: #ff8d8d8d;
+}
+.goodsItem .btns {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+}
+.btns .add, .btns .reduce{
+    width: 36px;
+    height: 36px;
+    font-size: 30px;
+    font-weight: 800;
+    text-color: black;
+    background-color: #f4bc19;
+}
+.btns .reduce {
+    border: 1px solid black;
+    background-color: #fff;
+}
+.rightEnd {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@keyframes  scaled{
+    0% {
+        transform: scale(0.1);
+        opacity: 0.5;
+    }
+    75% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-100%) scale(0.2);
+        border-radius: 1000px;
+    }
+    50% {
+        transform: translateY(-60%) scale(0.3);
+        border-radius: 300px;
+    }
+    100% {
+        transform: translateY(0%) scale(1);
+        border-radius: 0px;
+    }
+}
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes lengthRight {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes scaleSmlSlice {
+    0% {
+        transform: scale(0.2);
+        border-radius: 300px;
+    }
+    50% {
+        transform: scale(0.3);
+        border-radius: 100px;
+    }
+    100% {
+        transform: scale(1);
+        border-radius: 0px;
+    }
+}
+
+@keyframes shakeBox {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(16deg);
+    }
+    80% {
+        transform: rotate(-16deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+

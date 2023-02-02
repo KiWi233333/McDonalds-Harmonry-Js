@@ -1,0 +1,7 @@
+<div class="logBg" if="{{ state }}">
+    <div class="LogState">
+        <div class="LoadingBox" if="{{ state }}">
+            <label style="padding: 40px 0;">loading</label>
+        </div>
+    </div>
+</div>

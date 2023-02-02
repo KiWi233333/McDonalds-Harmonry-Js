@@ -1,0 +1,346 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #4deeeeee;
+    font-size: 28px;
+    margin-top: 80px;
+    margin-bottom: 180px;
+    scrollbar-color: #00ffffff;
+}
+image {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    padding: 10px;
+}
+
+.car {
+    border-radius: 26px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #ccd0d0d0;
+    margin: 15px 0;
+    padding: 20px 30px;
+}
+
+/* 顶部*/
+.top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 600;
+    align-items: center;
+    background-color:#fff;
+    padding: 0 20px;
+}
+
+/*顶部地址*/
+.topAddress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+
+}
+.AddressContain {
+    width: 90%;
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    border-bottom: 1px solid #99808080;
+}
+.addressLeft,.addressRight {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.addressLeft .address {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+.addressRight {
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+}
+.addressLeftPopup,.addressRight .changAddress {
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #ff98790a;
+    border: 1px solid #9998790a;
+    background-color: #e6fff9c4;
+    margin: 10px 0;
+}
+.addressIconBox {
+    width: 70px;
+    height: 70px;
+}
+.addressIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 60px;
+    box-shadow: 4px 4px 10px #ffd6d6d6;
+}
+.addressBottom {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    font-size: 28px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+/*地址列表弹窗*/
+.addressListPanel {
+    width: 90%;
+    height: 800px;
+    margin-bottom: 20%;
+}
+.addressListItem {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+}
+.addressListPanel .addressList {
+    width: 100%;
+    padding: 0px 20px;
+    margin-top: 20px;
+}
+.addressListPanel .panelTop{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*商品列表*/
+.centerGoodList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.centerGoodList .title {
+    height: 100px;
+    width: 100%;
+    font-weight: 600;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #99808080;
+}
+.centerGoodList .content {width: 100%;}
+.centerGoodList .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 10px 0;
+}
+.centerGoodList .bottom text {
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.centerGoodList .bottom .icon {
+    position: absolute;
+    top: 0px;
+    right: -30px;
+    width: 40px;
+    object-fit: cover;
+    height: 40px;
+}
+.smallTextSt {
+    font-size : 22px; padding : 15px 0;color: #ff676767;
+}
+
+
+/* 支付按钮条*/
+.shopBottom {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    bottom: 40px;
+    width: 100%;
+    animation: 800ms slideInLeft ease-in-out;
+}
+.bottomTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-color: #fbeecb;
+    border-radius: 40px;
+}
+.bottomBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #3a3a3a;
+    border-radius: 40px;
+    box-shadow: 10px 10px 20px #99ececec;
+}
+.bottomBottom .title {
+    font-weight: 600;
+    margin-left:40px;
+}
+.shopCarBtn {
+    width: 32%;
+    height: 100%;
+    font-weight: 600;
+    font-size: 32px;
+    border-radius: 40px;
+    background-color: #fcb900;
+}
+
+/*支付密码表单*/
+#payFrom {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    margin-bottom: 35%;
+}
+.payFromBox {    
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.payFromBox .panelTop {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+.payFromBox .priceBox {
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+    border-top: 1px solid #809d9d9d;
+    border-bottom: 1px solid #809d9d9d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+}
+.payFromBox .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.payFromBox .bottom .payItem{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.payFromBox .btn { 
+    width: 100%;
+    height: 70px;
+    font-weight: 600;
+    font-size: 32px;
+    border-radius: 40px;
+    margin-top: 40px;
+    background-color: #fcb900; 
+}
+.payItem .card {
+    height: 80px;
+    font-weight: 600;
+    font-size: 32px;
+    padding-left: 90px;
+    line-height: 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-image: url("/common/icon/balance_icon.png");
+    background-size: contain;
+}
+
+/*支付遮罩*/
+.logBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #80a9a9a9;
+}
+.LogState ,.createOrderLoading{
+    width: 300px;
+    height: 300px;
+    margin: 0px 20px;
+    background-color: #fff;
+    border-radius: 26px;
+    box-shadow: 5px 5px 10px #b3b3b3b3;
+}
+.LogState .LoadingBox,.createOrderLoading .LoadingBox {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.createOrderLoading {margin-bottom: 40%;}
+.LogState{overflow: hidden ;}
+.LogState .LoadingBoxSuccess {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/*动画*/
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes scaleIn {
+    0% {
+        transform:  scale(0.2);
+        border-radius: 1000px;
+    }
+
+    50% {
+        transform: scale(0.3);
+        border-radius: 300px;
+    }
+
+    100% {
+        transform: scale(1);
+        border-radius: 0px;
+    }
+}

@@ -1,0 +1,33 @@
+<!--子组件-->
+<element src="../../common/views/homeView/homeView.hml" name="homeView"></element>
+<element src="../../common/views/groupView/groupView.hml" name="groupView"></element>
+<element src="../../common/views/ordersView/ordersView.hml" name="ordersView"></element>
+<element src="../../common/views/myView/myView.hml" name="myView"></element>
+
+<div class="container">
+    <tabs @change="guideNavChange">
+        <tab-content class="tabContent" if="{{ ! isAutoLogin }}">
+        <!--  首页  -->
+            <homeView token="{{ token }}"></homeView>
+
+        <!--  社区  -->
+            <groupview token="{{ token }}"></groupview>
+
+        <!--  订单  -->
+            <ordersView token="{{ token }}"></ordersView>
+
+        <!--  我的  -->
+            <myView token="{{ token }}" @exit-login="{{exitLoginState()}}"></myView>
+        </tab-content>
+
+        <tab-bar mode="fixed" class="navBox">
+            <div class="nav" for="{{ (i, item) in menu }}" @click="{{ selectNav(i) }}" tid="i">
+                <div class="img" style="animation-play-state : {{ isActive === i ? 'running' : 'paused' }}">
+                    <image src="{{ isActive === i ? item.onIcon : item.icon }}"></image>
+                </div>
+                <text style="color : {{ isActive === i ? 'black' : 'gray' }};">{{ item.title }}</text>
+            </div>
+        </tab-bar>
+    </tabs>
+
+</div>

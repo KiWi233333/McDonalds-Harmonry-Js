@@ -1,0 +1,290 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+    scrollbar-color: #00ffffff;
+}
+.car {
+    border-radius: 22px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #cccfcfcf;
+    margin: 15px 0;
+    padding: 20px 30px;
+}
+.LoadingBox {
+    margin-top: 600px;
+    width: 300px;
+    height: 300px;
+
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* 顶部*/
+.top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    align-items: center;
+    background-color:#fff;
+    padding: 0 20px;
+}
+.top image {
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    left: 20px;
+    padding: 10px;
+}
+
+
+/* 内容 */
+.tabContent{
+    width: 100%;
+    scrollbar-color: #00ffffff;
+}
+.navBox {
+    margin-top: 120px;
+    background-color: #fff;
+}
+.tabItem {
+    width: 100%;
+    overflow: scroll;
+}
+.navItem text:active {
+    font-size: 32px;
+    font-weight: 700;
+    background-color: #fff;
+}
+/*订单列表*/
+.orderList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: scroll;
+}
+
+
+.loginBtn {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    padding: 15px;
+    background-color: #feda30;
+    text-color: #64252f;
+    font-size: 32px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+
+.logBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #80a9a9a9;
+}
+.LogState ,.createOrderLoading{
+    width: 300px;
+    height: 300px;
+    margin: 0px 20px;
+    background-color: #fff;
+    border-radius: 26px;
+    box-shadow: 5px 5px 10px #b3b3b3b3;
+}
+.LogState .LoadingBox,.createOrderLoading .LoadingBox {
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.createOrderLoading {margin-bottom: 40%;}
+.LogState{overflow: hidden ;}
+.LogState .LoadingBoxSuccess {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*支付密码表单*/
+#payFrom {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    margin-bottom: 35%;
+}
+.payFromBox {
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.payFromBox .panelTop {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+.payFromBox .priceBox {
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+    border-top: 1px solid #809d9d9d;
+    border-bottom: 1px solid #809d9d9d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+}
+.payFromBox .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.payFromBox .bottom .payItem{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.payFromBox .btn {
+    width: 100%;
+    height: 70px;
+    font-weight: 600;
+    font-size: 32px;
+    border-radius: 40px;
+    margin-top: 40px;
+    background-color: #fcb900;
+}
+.payItem .card {
+    height: 80px;
+    font-weight: 600;
+    font-size: 32px;
+    padding-left: 90px;
+    line-height: 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-image: url("/common/icon/balance_icon.png");
+    background-size: contain;
+}
+
+/*支付遮罩*/
+.logBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #80a9a9a9;
+}
+.LogState ,.createOrderLoading{
+    width: 300px;
+    height: 300px;
+    margin: 0px 20px;
+    background-color: #fff;
+    border-radius: 26px;
+    box-shadow: 5px 5px 10px #b3b3b3b3;
+}
+.LogState .LoadingBox,.createOrderLoading .LoadingBox {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.createOrderLoading {margin-bottom: 40%;}
+.LogState{overflow: hidden ;}
+.LogState .LoadingBoxSuccess {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*确认框弹窗*/
+#checkPrompt {
+    width: 80%;
+    margin-bottom: 40%;
+}
+.checkPromptBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+}
+.checkPromptBox label {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 70px 0;
+    text-align: center;
+}
+.checkPromptBox .btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 10px 20px;
+}
+.checkPromptBox button{
+    width: 40%;
+    height: 60px;
+    font-weight: 600;
+    font-size: 26px;
+    border-radius: 40px;
+    background-color: #fcb900;
+    text-color: #66271c;
+}
+.btn .btn2 {
+    border: 1px solid gray;
+    text-color: #66271c;
+    background-color: #fff;
+}
+
+#success,#paying {
+    margin-bottom: 40%;
+    width: 300px;
+    height: 300px;
+    overflow: hidden ;
+}

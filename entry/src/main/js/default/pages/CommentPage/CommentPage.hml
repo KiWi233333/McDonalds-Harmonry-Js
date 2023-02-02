@@ -1,0 +1,31 @@
+<element src="../../common/components/orderCard/orderCard.hml" name="orderCard"></element>
+
+<div class="container">
+
+<!--  顶部导航条  -->
+    <div class="top">
+        <image click-effect="spring-small" src="/common/icon/back_icon3.png" @click="toBack" style="transform : rotate(180deg);"></image>
+        <text>评价</text>
+        <button click-effect="spring-small" @click="sureComment">提交</button>
+    </div>
+
+<!--  主内容  -->
+    <ordercard goods_list="{{ order.goods_list }}"
+               order="{{ order }}"
+               order_state="{{ order.order_state }}"
+               is-ease="{{true}}"
+            ></ordercard>
+    <div class="center car">
+        <label class="title">你对餐品满意吗？</label>
+        <div class="goods">
+            <image src="/common/icon/icon.png" style="width: 80px; height: 80px;object-fit: contain;"></image>
+            <label style="margin-left : 15px; letter-spacing : 4px; color : #ff1d1d1d;">{{ "KIWI堡堡餐厅" }}</label>
+        </div>
+        <div class="rating">
+            <label>评分:</label>
+            <rating rating="{{ ratings }}" @change="changeRating"></rating>
+            <label if="{{ commentFrom.ratings }}" style="margin : 0% 15px; font-size : 28px;">{{ computeRating() }}</label>
+        </div>
+        <textarea class="textArea" @change="changeContent"></textarea>
+    </div>
+</div>

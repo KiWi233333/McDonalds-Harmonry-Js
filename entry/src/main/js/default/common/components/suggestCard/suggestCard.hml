@@ -1,0 +1,24 @@
+<div class="item car">
+    <div class="itemTop">
+        <image src="{{item.avatar}}"></image>
+        <div style="display: flex;flex-direction: column;">
+            <text>{{ item.nickName }}</text>
+            <text style="font-size: 18px;" if="{{item.rate>3}}">👍 赞了该商品</text>
+            <text style="font-size: 18px;" else>👎 踩了该商品</text>
+        </div>
+        <label class="topTime">{{ item.time }}</label>
+    </div>
+    <div class="rating">
+        <rating rating="{{ item.rate }}" @change="changeRating"></rating>
+        <label if="{{ item.rate }}">{{ computeRating() }}</label>
+    </div>
+    <div class="itemContent">
+        <text>{{item.content}}</text>
+    </div>
+    <div class="commentGoods" if="{{good.imgUrl}}" click-effect="spring-small" @click="{{ toShopPage('OUT') }}">
+        <div class="good">
+            <image src="https://www.kiwi2333.top/wp-content/gallery/goods/{{good.imgUrl}}" ></image>
+            <text>{{good.good_name}}</text>
+        </div>
+    </div>
+</div>

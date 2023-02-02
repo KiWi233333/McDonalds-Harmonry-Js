@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    font-size: 28px;
+    margin-top: 80px;
+    margin-bottom: 160px;
+    scrollbar-color: #00ffffff;
+}
+.LoadingBox {
+    margin-top: 300px;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+image {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+}
+.car {
+    border-radius: 26px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #ccd0d0d0;
+    margin: 15px 0;
+    padding: 20px 30px;
+}
+
+/* 顶部*/
+.top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 600;
+    align-items: center;
+    background-color:#fff;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+/*地址列表*/
+.center {
+    margin-top: 20px;
+}
+.addressList {
+    width: 100%;
+}
+.addressList .item{
+    width: 100%;
+    margin: 20px 0px;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addressList .itemLeft {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fc4e07;
+    border-radius: 80px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 34px;
+}
+.itemCenter div .defaultTip {
+    height: 30px;
+    border-radius: 8px;
+    font-size: 24px;
+    color: #f85005;
+    border: 1px solid #f85005;
+    padding: 0 8px;
+    text-align: center;
+}
+.item .itemCenter {
+    width: 65%;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+.item .itemCenter label {
+    padding-right: 12px;
+}

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="topTitle">
+        <label style="color: #653a14;padding-right: 10px;">KIWI</label>
+        <label style="color: #ffc714;">SHOP</label>
+    </div>
+    <image src="/common/raw/shining-stars.gif" class="bottomStar"></image>
+    <swiper id="swiper" class="swiper" loop="false" @click="nextStep">
+    <!--    step1    -->
+        <div class="step1 step">
+            <image class="img1" src="/common/images/burger-baner.png" ></image>
+            <image class="img2" src="/common/images/menu/burger_menu3.png"></image>
+            <div class="content car" click-effect="spring-medium">
+                <label class="step1Top">欢迎!</label>
+                <label class="step1Title">欢迎来到 KIWI 汉堡！</label>
+            </div>
+        </div>
+        <div class="step2 step">
+            <image class="img1" src="/common/images/burger-baner.png" ></image>
+            <image class="img2" src="/common/images/menu/burger_menu2.png"></image>
+            <div class="content car" click-effect="spring-medium">
+                <div style="margin: 20px;flex-direction: column;">
+                    <label>无需排队</label>
+                    <label style="color: #fec80f;text-align: right;">在线点餐</label>
+                </div>
+            </div>
+        </div>
+        <div class="step3 step">
+            <image src="/common/images/good_bg1.png" class="step3Bg"></image>
+            <div class="content car" click-effect="spring-medium">
+                <image src="/common/raw/delivery.gif" style="position: absolute;aspect-ratio: 1; width: 90%;border-radius: 22px;margin-top: 40px;left: 25px;"></image>
+                <label class="step3Title">急速送达  &gt;&gt;</label>
+            </div>
+            <div class="bottom">
+                <button @click="toIndexPage" icon="/common/icon/left_icon.png" click-effect="spring-small">立即前往</button>
+            </div>
+        </div>
+    </swiper>
+</div>

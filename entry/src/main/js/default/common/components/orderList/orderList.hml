@@ -1,0 +1,137 @@
+<element src="../orderCard/orderCard.hml" name="orderCard"></element>
+
+<div class="container">
+<!--  加载动画遮罩  -->
+    <div class="LoadingBox" show="{{isHttpAnim}}"></div>
+<!--  无用户数据则登录  -->
+    <button class="loginBtn" @click="toLoginPage" click-effect="spring-small" if="{{!isLoginState && !isHttpAnim}}">立即登录</button>
+    <label style="width: 100%;position: absolute;top: 56%;text-align: center;color: dimgray;" if="{{!isLoginState && !isHttpAnim}}">登录，查看你的订单信息</label>
+<!--  顶部导航条  -->
+    <div class="top">
+        <image if="{{isPayPageRouter || !hiddenBack}}" src="/common/icon/back_icon3.png" @click="{{toBack()}}" style="transform: rotate(180deg);"></image>
+        <text>我的订单</text>
+    </div>
+
+<!--  订单列表-->
+    <tabs @change="orderNavChange" show="{{!isHttpAnim}}">
+
+        <tab-bar mode="fixed" class="navBox">
+            <div class="navItem"><text>{{"全部"}}</text></div>
+            <div class="navItem"><text>{{"待付款"}}</text></div>
+            <div class="navItem"><text>{{"待取餐"}}</text></div>
+            <div class="navItem"><text>{{"待评价"}}</text></div>
+        </tab-bar>
+<!--  订单列表  -->
+        <tab-content class="tabContent" if="{{ordersList.length>0}}" >
+        <!--  全部  -->
+            <div class="tabItem" if="{{!isHttpAnim}}">
+                <list class="orderList">
+                    <list-item  for="{{(i, order) in ordersList}}" tid="{{i}}" clickeffect="false">
+                        <ordercard orders-list="{{ ordersList }}"
+                                   goods_list="{{ order.goods_list }}"
+                                   order="{{order}}"
+                                   order_state="{{ order.order_state }}"
+                                   @re-pay-order="rePayOrder()"
+                                   @change-check-prompt="changeCheckPrompt()"></ordercard>
+                    </list-item>
+                </list>
+            </div>
+        <!--  待付款2  -->
+            <div class="tabItem" if="{{!isHttpAnim}}">
+                <list class="orderList" >
+                    <list-item  for="{{(i, order) in ordersList}}" tid="{{i}}" clickeffect="false" if="{{order.order_state === 1 }}">
+                        <ordercard orders-list="{{ ordersList }}"
+                                   goods_list="{{ order.goods_list }}"
+                                   order="{{order}}"
+                                   order_state="{{ order.order_state }}"
+                                   @re-pay-order="rePayOrder()"
+                                   @change-check-prompt="changeCheckPrompt()"></ordercard>
+                    </list-item>
+                </list>
+            </div>
+        <!--  待取餐3  -->
+            <div class="tabItem" if="{{!isHttpAnim}}" >
+                <list class="orderList">
+                    <list-item  for="{{(i, order) in ordersList}}" tid="{{i}}" clickeffect="false" if="{{order.order_state === 2 || order.order_state === 3}}">
+                        <ordercard orders-list="{{ ordersList }}"
+                                   goods_list="{{ order.goods_list }}"
+                                   order="{{order}}"
+                                   order_state="{{ order.order_state }}"
+                                   @re-pay-order="rePayOrder()"
+                                   @change-check-prompt="changeCheckPrompt()"></ordercard>
+                    </list-item>
+                </list>
+            </div>
+        <!--  待评价4  -->
+            <div class="tabItem" if="{{!isHttpAnim}}" >
+                <list class="orderList">
+                    <list-item  for="{{(i, order) in ordersList}}" tid="{{i}}" clickeffect="false" if="{{order.order_state === 4}}">
+                        <ordercard orders-list="{{ ordersList }}"
+                                   goods_list="{{ order.goods_list }}"
+                                   order="{{order}}"
+                                   order_state="{{ order.order_state }}"
+                                   @re-pay-order="rePayOrder()"
+                                   @change-check-prompt="changeCheckPrompt()"></ordercard>
+                    </list-item>
+                </list>
+            </div>
+        </tab-content>
+
+    <!--  订单遮挡  -->
+        <tab-content if="{{ordersList.length <=0 && isLoginState}}">
+            <label style="width: 100%;text-align: center;color: dimgray;margin-top: 40%;">暂无订单信息</label>
+        </tab-content>
+
+    </tabs>
+
+
+<!--  支付弹窗  -->
+    <dialog id="payFrom">
+        <div class="payFromBox">
+        <!--  顶部导航条  -->
+            <div class="panelTop">
+                <image src="/common/icon/close_icon2.png" @click="closePanel('payFrom')"
+                       style="width:70px;height:100%;position : absolute;top: 0; right: 0px;padding: 10px;object-fit: contain;"></image>
+                <text style="height: 100%;font-size: 32px; font-weight: 700;">支付详情</text>
+            </div>
+            <div class="priceBox"><text style="font-size: 42px;">￥</text><label>{{theOrder.pay_price}}</label></div>
+            <div class="bottom">
+                <label style="text-align: center;padding:10px 0;font-size: 26px;width: 100%;">选择支付方式</label>
+                <div class="payItem">
+                    <div>
+                        <text class="card">钱包</text>
+                        <text style="line-height: 50px;color: gray;">（余额:{{balance}}）</text>
+                    </div>
+                    <input type="radio" checked="true" value="1"></input>
+                </div>
+            </div>
+            <button @click="toPaying" class="btn shopCarBtn" style="text-color: #ff242424;" disabled="{{!payFrom.isCanPay}}">{{payFrom.btnTip}}</button>
+        </div>
+    </dialog>
+<!--  支付中弹窗  -->
+    <dialog id="paying">
+        <div style="flex-direction: column;width: 300px;height: 300px;justify-content: flex-end;align-items: center;">
+            <image src="/common/raw/loading_bg2.gif" style="width:80%;height:70%;border-radius: 150px;"></image>
+            <label style="width: 100%;text-align: center;margin-bottom: 30px;">支付中</label>
+        </div>
+    </dialog>
+
+<!--  支付成功  -->
+    <dialog id="success">
+        <div style="flex-direction: column;width: 300px;height: 300px;justify-content: flex-end;align-items: center;">
+            <image src="/common/raw/success_bg.gif" style="width:80%;height:70%;border-radius: 150px;"></image>
+            <label style="width: 100%;text-align: center;margin-bottom: 30px;">支付成功</label>
+        </div>
+    </dialog>
+<!--  确认框组件  -->
+    <dialog id="checkPrompt">
+        <div class="checkPromptBox">
+            <label style="padding: 10px 0; border-bottom: 1px solid #eee;font-weight: 800; font-size: 36px;">提示</label>
+            <label style="color: gray;">{{checkPrompt.msg}}</label>
+            <div class="btn">
+                <button @click="{{closePanel('checkPrompt')}}" class="btn2">取消</button>
+                <button @click="{{sureCheckPrompt()}}">确认</button>
+            </div>
+        </div>
+    </dialog>
+</div>

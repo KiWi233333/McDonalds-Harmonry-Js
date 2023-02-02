@@ -1,0 +1,40 @@
+<element src="../../common/components/commentCard/commentCard.hml" name="commentCard"></element>
+
+<div class="container">
+    <div class="detailTop">
+    <!-- 顶部栏-->
+        <div class="nav" click-effect="spring-small" @click="toBack">
+            <image @click="toBack" src="../../common/icon/back_icon2.png"
+                   style="animation : 600ms slideInLeft ease-in-out;"></image>
+        </div>
+        <image src="https://www.kiwi2333.top/wp-content/gallery/goods/{{ detailData.imgUrl }}" class="goodsImg"></image>
+    </div>
+    <div class="content">
+        <div class="contentTop car">
+            <div class="goodsTile">
+                <label class="detailTitle" style="font-size : 44px;">{{ detailData.good_name }}</label>
+                <label class="detailTitle" style="font-size : 52px; color : #f56139; letter-spacing : 3px;">
+                    ￥{{detailData.price }}
+                </label>
+            </div>
+            <text  style="font-size : 28px; margin-bottom: 20px;">{{ "    " + detailData.good_detail }}</text>
+
+        </div>
+        <div class="rating car">
+            <label class="title">买家评价 :</label>
+            <rating indicator="true" stepsize="0.1" rating="{{ commentFrom.ratings }}"></rating>
+            <label if="{{ commentFrom.ratings }}">{{ computeRating() }}</label>
+        </div>
+        <div class="comment">
+            <div class="car" style="width: 100%;justify-content: center;" show="{{commentsList.length===0}}">
+                <div class="LoadingBox" show="{{isHttpAnim}}"></div>
+                <text show="{{ commentFrom.msg }}" style="color: dimgray;font-size: 24px;">{{commentFrom.msg}}</text>
+            </div>
+            <list if="{{ !isHttpAnim }}" scrolleffect="spring" scrollpage="false">
+                <list-item clickeffect="false" for="{{ (i, item) in commentsList }}">
+                    <commentcard item="{{ item }}"></commentcard>
+                </list-item>
+            </list>
+        </div>
+    </div>
+</div>
