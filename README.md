@@ -6,7 +6,6 @@ kiwi汉堡商城—鸿蒙移动端-HarmonyOS McDonald's
 
 
 
-![kiwishop2](https://www.kiwi2333.top/wp-content/uploads/2023/02/kiwishop1.png)
 
 
 
