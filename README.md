@@ -33,7 +33,7 @@
 
 ## 效果展示
 
-<div align="center">
+<div align="left">
  <img alt="图片" src=".doc/0.1 开屏.png" width="200px"/>
 <img alt="图片" src=".doc/0.5 主页.png" width="200px"/>
 <img alt="图片" src=".doc/1.1 下单流程.png" width="200px"/>
