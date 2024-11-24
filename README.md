@@ -33,7 +33,8 @@
 
 ## 效果展示
 
-<img alt="图片" src=".doc/0.1 开屏.png" width="200px"/>
+<div>
+ <img alt="图片" src=".doc/0.1 开屏.png" width="200px"/>
 <img alt="图片" src=".doc/0.5 主页.png" width="200px"/>
 <img alt="图片" src=".doc/1.1 下单流程.png" width="200px"/>
 <img alt="图片" src=".doc/1.1 下单流程2.png" width="200px"/>
@@ -60,6 +61,7 @@
 <img alt="图片" src=".doc/3.6 地址.png" width="200px"/>
 <img alt="图片" src=".doc/4. 登录.png" width="200px"/>
 <img alt="图片" src=".doc/4.2 注册.png" width="200px"/>
+</div>
 
 ## 联系作者：
 
