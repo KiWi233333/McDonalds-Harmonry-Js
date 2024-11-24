@@ -33,35 +33,33 @@
 
 ## 效果展示
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); grid-gap: 10px;">
-<img alt="图片" src=".doc/0.1 开屏.png" />
-<img alt="图片" src=".doc/0.5 主页.png" />
-<img alt="图片" src=".doc/1.1 下单流程.png" />
-<img alt="图片" src=".doc/1.1 下单流程2.png" />
-<img alt="图片" src=".doc/1.1 下单流程3.png" />
-<img alt="图片" src=".doc/1.1 下单流程4.png" />
-<img alt="图片" src=".doc/1.1 下单流程5.png" />
-<img alt="图片" src=".doc/1.1 下单流程6.png" />
-<img alt="图片" src=".doc/1.1 下单流程21.png" />
-<img alt="图片" src=".doc/2.1 未登录订单.png" />
-<img alt="图片" src=".doc/2.2 登录订单 确认操作.png" />
-<img alt="图片" src=".doc/2.2 登录订单.png" />
-<img alt="图片" src=".doc/2.2.1 已评价订单.png" />
-<img alt="图片" src=".doc/2.2.2 评论订单 操作.png" />
-<img alt="图片" src=".doc/2.2.2 评论订单1 操作.png" />
-<img alt="图片" src=".doc/2.2.2 评论订单2 操作.png" />
-<img alt="图片" src=".doc/2.2.2 评论订单3 操作.png" />
-<img alt="图片" src=".doc/2.社区.png" />
-<img alt="图片" src=".doc/3.1 未登录个人.png" />
-<img alt="图片" src=".doc/3.2 登录个人.png" />
-<img alt="图片" src=".doc/3.2 登录个人2.png" />
-<img alt="图片" src=".doc/3.3 个人钱包.png" />
-<img alt="图片" src=".doc/3.4 卡包.png" />
-<img alt="图片" src=".doc/3.5 个人信息.png" />
-<img alt="图片" src=".doc/3.6 地址.png" />
-<img alt="图片" src=".doc/4. 登录.png" />
-<img alt="图片" src=".doc/4.2 注册.png" />
-</div>
+<img alt="图片" src=".doc/0.1 开屏.png" width="200px"/>
+<img alt="图片" src=".doc/0.5 主页.png" width="200px"/>
+<img alt="图片" src=".doc/1.1 下单流程.png" width="200px"/>
+<img alt="图片" src=".doc/1.1 下单流程2.png" width="200px"/>
+<img alt="图片" src=".doc/1.1 下单流程3.png" width="200px"/>
+<img alt="图片" src=".doc/1.1 下单流程4.png" width="200px"/>
+<img alt="图片" src=".doc/1.1 下单流程5.png" width="200px"/>
+<img alt="图片" src=".doc/1.1 下单流程6.png" width="200px"/>
+<img alt="图片" src=".doc/1.1 下单流程21.png" width="200px"/>
+<img alt="图片" src=".doc/2.1 未登录订单.png" width="200px"/>
+<img alt="图片" src=".doc/2.2 登录订单 确认操作.png" width="200px"/>
+<img alt="图片" src=".doc/2.2 登录订单.png" width="200px"/>
+<img alt="图片" src=".doc/2.2.1 已评价订单.png" width="200px"/>
+<img alt="图片" src=".doc/2.2.2 评论订单 操作.png" width="200px"/>
+<img alt="图片" src=".doc/2.2.2 评论订单1 操作.png" width="200px"/>
+<img alt="图片" src=".doc/2.2.2 评论订单2 操作.png" width="200px"/>
+<img alt="图片" src=".doc/2.2.2 评论订单3 操作.png" width="200px"/>
+<img alt="图片" src=".doc/2.社区.png" width="200px"/>
+<img alt="图片" src=".doc/3.1 未登录个人.png" width="200px"/>
+<img alt="图片" src=".doc/3.2 登录个人.png" width="200px"/>
+<img alt="图片" src=".doc/3.2 登录个人2.png" width="200px"/>
+<img alt="图片" src=".doc/3.3 个人钱包.png" width="200px"/>
+<img alt="图片" src=".doc/3.4 卡包.png" width="200px"/>
+<img alt="图片" src=".doc/3.5 个人信息.png" width="200px"/>
+<img alt="图片" src=".doc/3.6 地址.png" width="200px"/>
+<img alt="图片" src=".doc/4. 登录.png" width="200px"/>
+<img alt="图片" src=".doc/4.2 注册.png" width="200px"/>
 
 ## 联系作者：
 
