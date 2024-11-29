@@ -1,0 +1,181 @@
+<element src="../../common/components/goodCar/goodCar.hml" name="goodCar"></element>
+<div class="container">
+
+<!-- 顶部栏-->
+    <div class="shopTopNav" id="shopTopNav">
+        <image @click="toBack" src="/common/icon/back_icon2.png"
+               style="animation: 600ms slideInLeft ease-in-out;"
+               click-effect="spring-medium"></image>
+        <div style="animation: 600ms slideInRight ease-in-out;">
+
+        <!--            <image @click="toSearch" src="../../common/icon/search_icon.png" click-effect="spring-medium"></image>-->
+            <image @click="toCarPackPage" src="/common/icon/youhuijuan_icon.png" click-effect="spring-medium"></image>
+        </div>
+    </div>
+
+<!--  轮播图  -->
+    <swiper class="topSwiper" loop="true" autoplay='true'>
+        <image for="{{ (i, item) in activesList }}"
+               src="../../common/images/res/{{ item.imgUrl }}"
+               tid="item.good_id"
+               @click="toActive"
+               if="{{ shopType == 'OUT' ? i < 5 : i >= 5 }}"></image>
+    </swiper>
+
+<!--  商品信息列表  -->
+    <div class="shopCenter">
+
+    <!-- 小灰条-->
+        <div class="tipBox">
+            <div class="tip"></div>
+        </div>
+        <list>
+
+        <!-- 挂牌 -->
+            <list-item clickeffect="false">
+                <div class="centerTitle">
+                    <div class="guidePanel">
+                        <text>{{ timeDotCom() }}好</text>
+                    </div>
+                    <label style="font-size: 48px; flex-weight: 600;">{{ "KIWI堡堡餐厅" }}</label>
+                    <div class="titleTip">
+                        <image src="/common/icon/onShop_icon.png"></image>
+                        <text>{{ shopType == 'IN' ? '到店取餐' : '外卖' }}</text>
+                    </div>
+                </div>
+            </list-item>
+
+            <list-item clickeffect="false" class="centerDetail">
+
+            <!--  分类列表 -->
+                <div>
+                    <list class="centerLeft" id="centerLeft" scrollpage="true">
+                        <list-item sticky="normal">
+                            <div style="width: 100%; height: 80px;"></div>
+                        </list-item>
+                        <list-item for="(i, item) in sortList" tid="i" clickeffect="false"
+                                   click-effect="spring-small"
+                                   @click="{{ scrollToPage(item.sortId) }}">
+                            <div class="menuItem">
+                                <image src="/common/images/menu/{{ item.img }}"></image>
+                                <text>{{ item.title }}</text>
+                            </div>
+                        </list-item>
+                    </list>
+                    <div class="LoadingBox" show="{{ isHttpAnim }}"></div>
+
+                <!--  商品列表 -->
+                    <list if="{{ ! isHttpAnim }}" class="centerRight" id="centerRightGoods" scrollpage="true"
+                          scrolleffect="spring"
+                          @scrolltop="hideTopNav">
+
+                    <!-- 单一商品 -->
+                        <list-item for="(i, item) in goodsList" tid="item.good_id"
+                                   clickeffect="false"
+                                >
+                            <div class="goodsList">
+                                <div if="{{ sortList[0].sortId == item.good_id }}" class="goodsSortTitle">
+                                    <label>{{ sortList[0].title }}</label>
+                                </div>
+                                <div if="{{ sortList[1].sortId == item.good_id }}" class="goodsSortTitle">
+                                    <label>{{ sortList[1].title }}</label>
+                                </div>
+                                <div if="{{ sortList[2].sortId == item.good_id }}" class="goodsSortTitle">
+                                    <label>{{ sortList[2].title }}</label>
+                                </div>
+                                <div if="{{ sortList[3].sortId == item.good_id }}" class="goodsSortTitle">
+                                    <label>{{ sortList[3].title }}</label>
+                                </div>
+                                <div if="{{ sortList[4].sortId == item.good_id }}" class="goodsSortTitle">
+                                    <label>{{ sortList[4].title }}</label>
+                                </div>
+
+                            <!-- 商品列表 -->
+                                <goodcar item="{{ item }}" index="{{ i }}"
+                                         @change-shop-car="changeShopCar()"
+                                         @show-detail-panel="showDetailPanel()"
+                                         shop_all_goods="{{ shopCarData.shop_all_goods }}"></goodcar>
+                            </div>
+                        </list-item>
+                        <list-item>
+                            <text class="bottomTipText">———— 我是有底线的 ————</text>
+                        </list-item>
+                    </list>
+                </div>
+            </list-item>
+        </list>
+    </div>
+
+<!-- 商品详情弹窗 -->
+    <dialog id="popupPanel">
+        <div class="popupBox">
+            <div class="detailTop">
+                <image src="/common/icon/close_icon.png" class="backTips" @click="closeDetailPanel"></image>
+                <image src="../../common/images/res/{{ detailData.imgUrl }}" class="goodsImg">
+                </image>
+            </div>
+            <div class="content">
+                <label class="detailTitle" style="font-size: 36px;">{{ detailData.good_name }}</label>
+                <text style="font-size: 22px;">{{ detailData.good_detail }}</text>
+            </div>
+            <div class="bottomBtn">
+                <button class="cancel" @click="closeDetailPanel">取消</button>
+
+            <!--                <button class="addCar" @click="{{goodAdd(detailData)}}">￥{{ detailData.price }} 加入购物车</button>-->
+            <!--                <button class="addCar" @click="closeDetailPanel">￥{{ detailData.price }} </button>-->
+            </div>
+        </div>
+    </dialog>
+
+<!--  购物车商品列表  -->
+    <dialog id="shopCarDialog" @cancel="closeShopCarDialog">
+        <div class="popupBox">
+            <div class="detailTop">
+                <image src="/common/icon/close_icon.png" class="backTips" @click="closeShopCarDialog"></image>
+            </div>
+            <div class="content">
+                <label style="text-align: center;">已选商品</label>
+                <list if="{{ isShopCar }}" class="centerRight shopCarList" scrollpage="false" scrolleffect="spring"
+                      scrollbar="off">
+
+                <!-- 单一商品 -->
+                    <list-item for="(i, item) in goodsList" tid="item.good_id" clickeffect="false" show="{{
+                            shopCarData.shop_all_goods[i] ? (shopCarData.shop_all_goods[i].item.good_id === item.good_id && shopCarData.shop_all_goods[i].sum > 0) : false
+                            }}">
+
+                    <!-- 商品列表 -->
+                        <goodcar item="{{ item }}" index="{{ i }}" @change-shop-car="changeShopCar()"
+                                 shop_all_goods="{{ shopCarData.shop_all_goods }}"></goodcar>
+                    </list-item>
+                </list>
+            </div>
+            <label style="text-align: right; font-size: 42px; padding-right: 100px;">总计:￥ {{ allGoodsPrice }}
+            </label>
+            <div class="bottomBtn btns">
+                <button class="cancel" @click="closeShopCarDialog">取消</button>
+                <button class="addCar" @click="toPayPage">去结算</button>
+            </div>
+        </div>
+    </dialog>
+
+<!-- 购物车底部   -->
+    <div class="shopBottom" @click="showShopCarDialog" click-effect="spring-large">
+        <text class="shopBottomSum" show="{{ shopCarData.goodsAllSum > 0 }}">{{ shopCarData.goodsAllSum }}</text>
+        <image src="/common/icon/inShop_icon.png" show="{{ shopType == 'IN' }}"></image>
+        <image src="/common/icon/outShop_icon.png" show="{{ shopType == 'OUT' }}"></image>
+        <div class="bottomRight">
+            <label style="color: {{ shopCar.color }};" if="{{ allGoodsPrice == 0 }}">{{ shopCar.shopInfo }}</label>
+            <label style="color: #fff;" else>总计：￥ {{ allGoodsPrice }}</label>
+            <button class="shopCarBtn"
+                    @click="toPayPage"
+                    style="text-color: {{ shopCarData.goodsAllSum > 0 ? shopCar.colorActive : shopCar.color }};
+                            background-color: {{ shopCarData.goodsAllSum > 0 ? shopCar.bgColorActive : shopCar.bgColor}};">
+                去结算
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+

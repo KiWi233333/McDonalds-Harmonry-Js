@@ -1,0 +1,329 @@
+.container {
+    width: 100%;
+    height: 100%;
+    background-image: url("/common/images/guide_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+image {
+    width: 400px;
+    object-fit: contain;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    indicator-color: #eee;
+    indicator-selected-color: #fddb28;
+    indicator-size: 20px;
+    indicator-left: 30px;
+    indicator-bottom: 40px;
+    background: linear-gradient(120deg, #ffffddbf 0%, #ffffff 55%);
+    background: linear-gradient(120deg, #a6ffd04b 0%, #ffffddbf 40%, #ffffff 60%);
+
+}
+
+.car {
+    border-radius: 32px;
+    box-shadow: 5px 5px 10px #ccc1c1c1;
+    backdrop-filter: blur(10px);
+    background-size: contain;/*    background: linear-gradient(120deg, #a6ffd04b 0%, #ffffff 50%);*/
+}
+
+.topTitle {
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    z-index: 10;
+    font-size: 72px;
+    font-weight: 600;
+    font-family: HYQiHei-65S;/*    font-style: italic;*/
+}
+
+/*星星*/
+
+.bottomStar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 300px;
+}
+
+.skipBtn {
+    position: fixed;
+}
+
+.step {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.step1 .content, .step2 .content {
+    width: 65%;
+    height: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 页面1 */
+
+.step1 .content {/*    background-color: #fff;*/
+}
+
+.step1 .img1 {
+    position: absolute;
+    top: 35%;
+    left: -30%;
+    width: 70%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    transform: rotate(45deg);
+}
+
+.step1 .img2 {
+    width: 300px;
+    aspect-ratio: 1;
+    position: absolute;
+    right: -5%;
+    z-index: -1;
+    transform: rotate(-30deg);
+}
+
+.step1  .step1Top {
+    font-size: 72px;;
+    font-weight: 600;
+    font-style: italic;
+    color: #653819;
+    width: 100%;
+    letter-spacing: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.step1 .step1Title {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    color: #ff737373;
+    font-style: italic;
+    position: absolute;
+    bottom: 30%;
+
+}
+
+/* 页面2 */
+.step2 .content .tip {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+}
+.step2 .img1 {
+    width: 80%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    transform: rotate(-20deg);
+}
+.step2 .img2 {
+    width: 300px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 10%;
+    right: -150px;
+    z-index: -1;
+}
+
+.step2 .content label {
+    width: 80%;
+    font-style: italic;
+    font-size: 52px;
+    font-weight: 700;
+    color: #e6ffffff;
+    padding: 5px 0;
+    margin: 20px 0;
+    transform: rotate(-20deg);
+
+}
+
+/* 页面3 */
+
+.step3 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+}
+
+.step3 .content {
+    width: 65%;
+    height: 30%;
+    background-color: #fff;
+}
+
+.step3 .content .step3Title {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    font-size: 48px;
+    font-weight: 600;
+    font-style: italic;
+    position: absolute;
+    color: #fd8734;
+}
+
+.step3 .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.step3 .topTip {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #80808080;
+    color: #eee;
+    border-radius: 30px;
+}
+
+.step3 .bottom {
+    position: absolute;
+    bottom: 22%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.step3 .bottom button {
+    padding: 16px 30px;
+    background-color: #feda30;
+    text-color: #64252f;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 40px;
+    icon-width: 32px;
+    icon-height: 32px;
+    z-index: 99;
+}
+
+.step3 .step3Bg {
+    position: absolute;
+    top: -200px;
+    right: -160px;
+    transform: rotate(-45deg);
+}
+
+
+@keyframes lightSpeedInRight {
+    from {
+        transform: translate(100%) skewX(-30deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: skewX(20deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: skewX(-5deg);
+    }
+
+    to {
+        transform: translate(0)
+    }
+}
+@keyframes opacityIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes iconShare {
+    0% {
+        transform: scale(0.6) rotate(0deg);
+        opacity: 1;
+    }
+
+    25% {
+        transform: scale(0.8) rotate(8deg);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1) rotate(-10deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.8) rotate(8deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+@keyframes opacityIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

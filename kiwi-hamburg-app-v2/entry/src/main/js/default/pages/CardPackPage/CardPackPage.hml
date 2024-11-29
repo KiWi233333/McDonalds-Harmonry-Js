@@ -1,0 +1,22 @@
+<div class="container">
+
+<!--  加载动画遮罩  -->
+    <div class="LoadingBox" show="{{ isHttpAnim }}"></div>
+
+<!--  无用户数据  -->
+    <label style="width : 100%; position : absolute; top : 56%; text-align : center; color : dimgray;"
+           if="{{ isEmploy && ! isHttpAnim }}">暂无优惠卷</label>
+
+<!--  顶部导航条  -->
+    <div class="top">
+        <image src="/common/icon/back_icon3.png" @click="toBack" click-effect="spring-small"
+               style="transform : rotate(180deg);"></image>
+        <text>我的卡包</text>
+    </div>
+
+<!--  优惠卷列表  -->
+    <list class="list">
+        <list-item>
+        </list-item>
+    </list>
+</div>

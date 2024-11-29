@@ -1,0 +1,15 @@
+<div class="item car">
+    <div class="itemTop">
+        <image src="/common/images/res/{{item.avatar}}"></image>
+        <div style="display: flex;flex-direction: column;">
+            <text>{{ item.nickName }}</text>
+            <text style="font-size: 18px;" if="{{item.rate>3}}">👍 赞了该商品</text>
+            <text style="font-size: 18px;" else>👎 踩了该商品</text>
+        </div>
+        <label class="topTime">{{ item.time }}</label>
+    </div>
+    <div class="itemContent">
+        <text>{{item.content}}</text>
+    </div>
+
+</div>

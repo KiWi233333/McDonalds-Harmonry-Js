@@ -1,0 +1,223 @@
+.context {
+    display: flex;
+    flex-direction: column;
+    margin: 60px 30px 0 30px;
+    margin-bottom: 120px;
+    animation-timing-function: ease-in;
+    scrollbar-color: #00ffffff;
+}
+
+.loading {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 40%;
+    padding: 20px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.car {
+    border-radius: 22px;
+    box-shadow: 5px 5px 10px #ccc1c1c1;
+    margin: 20px 10px;
+    padding: 20px 30px;
+    backdrop-filter: blur(10px);
+}
+
+/* 顶部*/
+
+.top {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.top .title {
+    font-size: 38px;
+    font-weight: 600;
+}
+.top image {
+    position: absolute;
+    right: 0;
+    top: -50;
+    z-index: -1;
+    width: 200px;
+    object-fit: contain;
+    transform: rotate(30deg);
+}
+/*centerTop上部分 */
+
+.centerTop {
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.centerTop .topLeft {
+    flex-weight: 1;
+    margin: 20px 10px;
+    padding: 0;
+}
+
+.centerTop .topLeft swiper {
+    overflow: hidden;
+    height: 450px;
+    indicator-selected-color: white;
+    indicator-color: #99eeeeee;
+    indicator-right: 0px;
+    indicator-bottom: 0px;
+    indicator-size: 10px;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('/common/raw/loading_bg2.gif');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center center;
+    border-radius: 26px;
+}
+
+.topLeft swiper image {
+    width: 100%;
+    height: 100%;
+    border-radius: 26px;
+}
+
+.centerTop .topLeft swiper {
+    width: 100%;
+    overflow: hidden;
+}
+/* 卡包和钱包*/
+.centerTop .topRight {
+    flex-direction: column;
+    flex-weight: 1;
+    justify-content: space-around;
+}
+
+.centerTop .topRight .car {
+    width: 100%;
+    margin: 15px 10px;
+    flex-weight: 1;
+    color: #653a14;
+}
+
+/**/
+/*卡包*/
+
+.centerTop .topRight .cardBox {
+    margin: 10px;
+    padding: 30px 20px;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(120deg, #e6ffc714 0%, #ffffff 55%);
+}
+.centerTop .topRight .cur {
+    background: linear-gradient(120deg, #ffffddbf 0%, #ffffff 55%);
+}
+
+.cardBox image {
+    width: 100px;
+    height: 100px;
+    z-index: 99;
+}
+
+/* 中部*/
+/*热销商品*/
+
+.centerCenter {
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(120deg, #ffffddbf 0%, #ffffff 55%);
+    backdrop-filter: blur(10px);
+    border-radius: 26px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.centerCenter label {
+    font-size: 32px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.centerCenter .list {
+    flex-direction: row;
+/*    width: 100%;*/
+    height: 300px;
+    overflow: scroll;
+}
+.centerCenter .list .item {
+    flex-direction: column;
+    margin: 30px 20px 20px 0;
+    text-align: center;
+}
+.centerCenter .list .item image {
+    width: 150px;
+    height: 150px;
+    background-color: #80ffffff;
+    object-fit: contain;
+}
+.centerCenter .list .item label {
+    font-size: 22px;
+    width: 160px;
+    height: 30px;
+    overflow: scroll;
+    scrollbar-color: #00ffffff;
+}
+.list .item .count {
+    position: absolute;
+    top: -15px;
+    left: 4px;
+    z-index: 1;
+    width: 50px;
+    aspect-ratio: 1;
+    background-image: url("/common/icon/onStar_icon.png");
+    background-size: contain;
+    color: #653b12;
+    font-weight: 700;
+    font-size: 22px;
+}
+/* 网友评论*/
+.commentTitle {
+    font-size: 32px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.comment {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.comment .title {
+    padding: 20px 0;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+}
+.item .itemTop {
+    width: 100%;
+}
+.item .itemTop image{
+    border-radius: 40px;
+    border: 1px solid #99808080;
+}
+.item .itemTop text {
+    padding-top: 5px;
+    padding-left: 20px;
+    font-size: 32px;
+}
+.itemTop .topTime {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    font-size: 22px;
+    color: gray;
+}
+.itemContent text {
+    padding: 20px ;
+    font-size: 26px;
+    max-height: 200px;
+}

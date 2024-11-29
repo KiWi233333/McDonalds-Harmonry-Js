@@ -1,0 +1,21 @@
+<div class="goodsItem" >
+<!--  跳转普通页  -->
+    <image @click="showDetailPanel" id="{{item.good_id}}" src="/common/images/res/{{ item.imgUrl }}" click-effect="spring-small"></image>
+<!--  跳转详情页  -->
+    <div class="center" click-effect="spring-small" @click="showDetailPage" >
+        <label>{{ item.good_name }}</label>
+        <text class="detail">{{ item.good_detail }}</text>
+        <text class="price">
+            <span style="font-size : 24px;">￥</span>
+            <span style="font-size : 40px; flex-weight : 800;">{{ item.price }}</span>
+        </text>
+    </div>
+    <div class="btns" if="{{isEditShopCar}}">
+        <button @click="{{ goodReduce(item,index) }}" class="reduce" if="{{ goods.sum > 0 }}">-</button>
+        <text style="margin : 0 5px;" show="{{ goods.sum > 0 }}">{{ goods.sum }}</text>
+        <button @click="{{ goodAdd(item,index) }}" class="add">+</button>
+    </div>
+    <div class="btns" if="{{!isEditShopCar}}">
+        <text style="margin : 0 5px; font-size: 28px;">{{ goods.sum }} 份</text>
+    </div>
+</div>

@@ -1,0 +1,373 @@
+
+.car {
+    border-radius: 26px;
+    box-shadow: 2px 2px 10px #80acacac;
+}
+.context {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 30px 0 30px;
+    margin-bottom: 120px;
+
+    animation-timing-function: ease-in;
+    animation: 1s opacityIn;
+}
+/*导航栏*/
+.navBox {
+    position: fixed;
+    bottom: 0;
+    height: 140px;
+    background-color: #fff;
+    box-shadow: -10px 0 20px #ffc4c4c4;
+}
+.nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    animation-timing-function: ease-in-out;
+    animation: 1s iconShare;
+    animation-play-state: paused;
+    transform-origin: 50% 50%;
+    object-fit: scale-down;
+}
+@keyframes iconShare {
+    0% {
+        transform: scale(0.6) rotate(0deg);
+        opacity: 1;
+    }
+
+    25% {
+        transform: scale(0.8) rotate(8deg);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1) rotate(-10deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.8) rotate(8deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* 4.我的 */
+.context4 {
+    animation-timing-function: ease-in;
+    animation: 1.2s opacityIn;
+    background-color: #fff;
+}
+
+.myTip {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+.myTip2 {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 10px;
+    left: 150px;
+    z-index: -1;
+
+}
+.loginBtn {
+    padding: 15px 30px;
+    background-color: #feda30;
+    text-color: #64252f;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 20px 0;
+    icon-width: 32px;
+    icon-height: 32px;
+}
+.myTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.myTop2 {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    margin: 50px 0;
+}
+.userImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    box-shadow: 2px 2px 10px grey;
+    margin: 5px;
+    object-fit: contain;
+}
+.exitBtn {
+    width: 100%;
+}
+
+.myTop label,.myTop2 label {
+    font-size: 62px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background-image: url("../../icon/star_icon.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    margin-top: 80px;
+}
+.myTop2 .myTopCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/*钱包*/
+.moneysCar {
+    width: 100%;
+    height: 280px;
+    border-radius: 26px;
+    background-color: #ffbb0e;
+    color: #653b13;
+    overflow: hidden ;
+    position: relative;
+    margin-top: 40px;
+    margin: 40px 8px 10px 8px;
+
+    animation-timing-function: ease-in;
+    animation: 1s slideInLeft;
+}
+.moneysCar .cars {
+    display: flex;
+    justify-content: space-around;
+    font-size: 22px;
+    background-color: #ccdbdbdb;
+    width: 350px;
+    height: 40%;
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    padding: 10px;
+    border-radius: 0 0 26px 26px;
+    z-index: 1;
+}
+.cars div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cars image {
+    width: 30%;
+    object-fit: contain;
+}
+.moneysCar .moneys {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #ffc718;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 2;
+}
+.moneysCar label {
+    font-size: 56px;
+    font-weight: 600;
+}
+.purseCar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 180px;
+    height: 80px;
+    position: absolute;
+    bottom: 30px;
+    border-radius: 50px 0 50px 0;
+    padding: 0 20px;
+    right: 0;
+    z-index: 3;
+    background-color: #fdd633;
+    box-shadow: 5px 5px 20px #808d8d8d;
+}
+.purseCar image {
+    width: 50px;
+    height: 50px;
+}
+/*中部*/
+
+.myCenter {
+    margin: 30px 8px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 26px;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #ffcbcbcb;
+    animation-timing-function: ease-in;
+    animation: 1s slideInRight;
+}
+.myOrders,.myCollect {
+    width: 48%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    font-size: 20px;
+    color: gray;
+}
+.myOrders label,.myCollect label {
+    font-size: 28px;
+    color: black;
+}
+.myCenter image {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0px;
+}
+.myCenter .vr {
+    height: 100px;
+    border: 1px solid gray;
+}
+.myCollect image {
+    width: 80px;
+    height: 80px;
+}
+
+/*底部*/
+
+.myBottom {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.myBottom div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.myBottom image {
+    width: 50px;
+    height: 50px;
+}
+
+.myBottomOld {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+@keyframes opacityIn {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes lightSpeedInRight {
+    from {
+        transform: translate3d(100%, 0, 0) skewX(-30deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: skewX(20deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: skewX(-5deg);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -30px, 0) scaleY(1.1);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -15px, 0) scaleY(1.05);
+    }
+
+    80% {
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 0, 0) scaleY(0.95);
+    }
+
+    90% {
+        transform: translate3d(0, -4px, 0) scaleY(1.02);
+    }
+}

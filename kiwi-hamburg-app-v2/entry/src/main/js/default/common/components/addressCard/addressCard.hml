@@ -1,0 +1,16 @@
+<div class="item">
+    <div class="itemLeft">
+        <text>{{ item.name[0] }}</text>
+    </div>
+    <div class="itemCenter">
+        <div style="margin-bottom : 10px;">
+            <label style="font-weight : 600; color : black; font-size : 30px;">{{ item.name }}</label>
+            <label>{{ item.phone }}</label>
+            <label if="{{ item.default }}" class="defaultTip" style="height : 40px;">默认</label>
+        </div>
+        <label style="font-size : 22px; height : 60px;">{{ item.address }}</label>
+    </div>
+    <div class="itemRight">
+        <image src="/common/icon/edit_icon.png"></image>
+    </div>
+</div>

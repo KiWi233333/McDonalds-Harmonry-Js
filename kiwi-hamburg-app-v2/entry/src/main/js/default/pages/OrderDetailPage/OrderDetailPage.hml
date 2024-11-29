@@ -1,0 +1,66 @@
+<div class="container">
+<!--  顶部导航条  -->
+    <div class="top" >
+        <image src="/common/icon/back_icon3.png" @click="toBack" click-effect="spring-small"
+               style="transform : rotate(180deg);"></image>
+    </div>
+    <image src="/common/images/burger-baner.png" class="topBg"></image>
+<!--  加载动画遮罩  -->
+<!--    <div class="LoadingBox" show="{{ isHttpAnim }}"></div>-->
+<!--    -->
+    <div class="topState">
+        <label style="font-size: 52px;font-weight: 700;">{{stateTitle}}</label>
+        <text style="padding: 15px 5px;">{{stateMsg}}</text>
+    </div>
+    <div class="center car"> 
+        <label class="shopName">{{"KIWI堡堡餐厅"}}</label>
+        <div class="good" for="{{(i,p) in order.goods_list}}" if="{{p && p.sum}}">
+                <image src="/common/images/res/{{p.item.imgUrl}}"></image>
+                <div style="padding: 10px;flex-direction: column;justify-content: space-between;">
+                    <label style="font-size: 26px;font-weight: 600;">{{ p.item.good_name }}</label>
+                    <text style="padding-top: 30px;">{{p.sum}}份</text>
+                </div>
+            <label class="price">￥{{p.allPrice}}</label>
+        </div>
+        <div class="centerBottom">
+            <div>
+                <label style="font-size: 32px;font-weight: 600;">商品小计</label>
+                <label style="font-size: 36px;font-weight: 700;">￥{{order.order_price}}</label>
+            </div>
+            <div>
+                <label style="font-size: 30px;font-weight: 600;">优惠</label>
+                <label style="font-size: 34px;font-weight: 700;color:#ef503d;">-￥{{order.discount_price}}</label>
+            </div>
+            <div style="justify-content: flex-end;">
+                <label style="font-size: 28px;padding-right: 5px;padding-top: 10px;">实付￥</label>
+                <label style="font-size: 46px;font-weight: 700;">{{order.pay_price}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="bottom car">
+        <label style="font-size: 36px;font-weight: 600;margin: 20px 0 40px 0;">订单信息</label>
+        <div>
+            <label style="font-size: 26px;color: dimgray;">订单号</label>
+            <label style="font-size: 26px;">{{order.order_uid}}</label>
+        </div>
+        <div>
+            <label style="font-size: 26px;color: dimgray;">手机号</label>
+            <label style="font-size: 26px;">{{order.username}}</label>
+        </div>
+        <div>
+            <label style="font-size: 26px;color: dimgray;">就餐方式</label>
+            <label style="font-size: 26px;">{{getShopType(order.shop_type)}}</label>
+        </div>
+        <div>
+            <label style="font-size: 26px;color: dimgray;">下单时间</label>
+            <label style="font-size: 26px;">{{getShopTime(order.shop_time)}}</label>
+        </div>
+        <div>
+            <label style="font-size: 26px;color: dimgray;">下单时间</label>
+            <label style="font-size: 26px;">{{getShopTime(order.shop_time)}}</label>
+        </div>
+    </div>
+<!--    <div class="btns">-->
+
+<!--    </div>-->
+</div>

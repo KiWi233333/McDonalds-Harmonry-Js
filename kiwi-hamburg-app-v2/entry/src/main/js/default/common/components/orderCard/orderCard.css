@@ -1,0 +1,113 @@
+.car {
+    border-radius: 22px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #cccfcfcf;
+    margin: 15px 0;
+    padding: 20px 30px;
+}
+/* 单个订单*/
+.orderItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 30px;
+    padding: 20px 40px;
+}
+.orderItem .itemTop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 600;
+    color: gray;
+}
+.orderItem .itemTop label {
+    padding-right: 30px;
+    font-weight: 700;
+    font-size: 26px;
+    background-image: url("/common/icon/back_icon3.png");
+    background-position: right center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    color: black;
+}
+.addressLeftPopup {
+    padding: 4px 12px;
+    border-radius: 5px;
+    color: #ff98790a;
+    border: 1px solid #9998790a;
+    background-color: #e6fff9c4;
+    margin: 10px 0;
+}
+.itemCenter {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #808d8d8d;
+}
+.itemCenter .centerLeft {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+    height: 180px;
+    overflow: scroll;
+}
+.itemCenter .goods {
+    width: 140px;
+}
+.itemCenter .goods ,.rightPrice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 5px;
+}
+.itemCenter .goodsImage {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+.itemCenter .goods label {
+    font-size: 22px;
+    width: 140px;
+    height: 28px;
+}
+.itemCenter .centerRight {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.itemBottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemBottom image{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+.itemBottom button,.btn {
+    width: 150px;
+    padding: 10px 30px;
+    background-color: #feda30;
+    text-color: #64252f;
+    font-size: 22px;
+    margin: 20px 5px;
+    border-radius: 36px;
+}
+.itemBottom .cancelOrder {
+    background-color: #fff;
+    border: 1px solid gray;
+}
+
+

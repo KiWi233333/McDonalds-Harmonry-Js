@@ -1,0 +1,495 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    scrollbar-color: #00ffffff;
+}
+
+/* 顶部*/
+/* nav*/
+.shopTopNav {
+    position: fixed;
+    top: 15px;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopTopNav image {
+    width: 70px;
+    height: 70px;
+    background-color: #806b6b6b;
+    border-radius: 60px;
+    padding: 10px;
+    margin: 0 20px;
+    object-fit: contain;
+}
+
+/*轮播图*/
+
+.topSwiper {
+/*    animation: 600ms slideInBottom linear;*/
+    overflow: hidden;
+    height: 450px;
+    indicator-selected-color: white;
+    indicator-color: #eee;
+    indicator-right: 20px;
+    indicator-bottom: 30px;
+    background-image: url("/common/images/background.jpg");
+    background-size: contain;
+    background-position: center center;
+    indicator-size: 12px;
+}
+
+/*title地址栏目*/
+.centerTitle {
+    margin-top: 40px;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.guidePanel {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 150px;
+    height: 160px;
+    color: #eee;
+    font-size: 26px;
+    font-family: HYQiHei-65S;
+    background-image: url("/common/images/shop_panel.png");
+    background-size: cover;
+    animation: 4s shakeBox linear;
+    animation-iteration-count: infinite;
+    transform-origin: 52% 3%;
+}
+
+.guidePanel text {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.titleTip image {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+
+/* 商品内容*/
+.LoadingBox {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.shopCenter {
+    display: flex;
+    flex-direction: column;
+    margin-top: -30px;
+    width: 100%;
+    border-radius: 0 0 26px 26px;
+    background-color: #fff;
+}
+
+/*小灰条*/
+
+.shopCenter .tipBox {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopCenter .tip {
+    width: 16%;
+    height: 12px;
+    background-color: #80b0b0b0;
+    border-radius: 20px;
+}
+
+/*商品详细信息*/
+
+.centerDetail {
+    width: 100%;
+}
+.centerTitleBanner {
+    position: absolute;
+    top: 0;
+}
+.centerLeft {
+    margin-top: 50px;
+    background-color: #fff;
+    width: 20%;
+    box-shadow: 5px 5px 16px #eee;
+    border-radius: 0 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerLeft .menuItem {
+    width: 100%;
+    flex-weight: 1;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.menuItem:active {
+    background-color: #eee;
+    color: brown;
+}
+.menuItem image {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+.menuItem text {
+    width: 100%;
+    text-align: center;
+}
+
+
+.centerRight {
+    margin-top: -60px;
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.centerRight .goodsItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+    padding-bottom: 20px;
+    border-top: 1px solid #998d8d8d;
+}
+
+.goodsList {
+    display: flex;
+    flex-direction: column;
+    columns: 1;
+    justify-content: center;
+}
+
+.goodsItem image {
+    width: 180px;
+    height: 160px;
+    object-fit: contain;
+}
+
+.goodsItem .center {
+    width: 60%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.center .detail {
+    font-size: 18px;
+    height: 50px;
+    width: 100%;
+    color: #ff8d8d8d;
+}
+
+.goodsItem .btns {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.btns .add, .btns .reduce {
+    width: 36px;
+    height: 36px;
+    font-size: 30px;
+    font-weight: 800;
+    text-color: black;
+    background-color: #f4bc19;
+}
+
+.btns .reduce {
+    border: 1px solid black;
+    background-color: #fff;
+}
+
+.rightEnd {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.goodsSortTitle label {
+    border-radius: 26px;
+    border: 1px solid grey;
+    padding: 0 20px;
+    margin: 40px 10px 20px 10px;
+}
+
+/* 底部购物车*/
+
+.shopBottom {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    margin: 0fp 30px 20px 30px;
+    animation: 1s slideInLeft ease-in-out;
+}
+
+.shopBottom image {
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+    z-index: 10;
+    width: 120px;
+    height: 130px;
+    object-fit: contain;
+}
+
+.bottomRight {
+    animation-delay: 800;
+    animation: 1s lengthRight ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #3a3a3a;
+    border-radius: 40px;
+    margin-left: 30px;
+    box-shadow: 10px 10px 20px #99ececec;
+}
+
+.bottomRight label {
+    font-size: 32px;
+    font-weight: 600;
+    margin-left: 100px;
+}
+
+.shopCarBtn {
+    width: 30%;
+    height: 100%;
+    font-weight: 600;
+    font-size: 32px;
+    border-radius: 40px;
+    background-color: #6b6b6b;
+    texton-color: #998d8d8d;
+}
+
+.shopBottomSum {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 40px;
+    background-color: #f4bc14;
+    position: absolute;
+    top: -30px;
+    left: 90px;
+    z-index: 20;
+}
+
+
+/* 商品详情弹窗*/
+
+#popupPanel {margin-bottom: 30px;}
+#popupPanel .popupBox {
+    display: flex;
+    flex-direction: column;
+}
+
+#popupPanel
+.detailTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 0fp 0px 36px 36px;
+}
+
+.detailTop .backTips {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transform: rotate(-90deg);
+    z-index: 1;
+}
+
+.detailTop .goodsImg {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    background-image: url("/common/images/detail_bg.png");
+}
+
+#popupPanel
+.content {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottomBtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.bottomBtn button {
+    padding: 10 60px;
+    background-color: #feda30;
+    text-color: #64252f;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 20px 0;
+    border-radius: 36px;
+}
+
+.bottomBtn .cancel {
+    texton-color: black;
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+.bottomTipText {
+    color: grey;
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: 600ms slideInBottom linear;
+    margin-top: 50px;
+}
+
+.popupBox, .popupBox .content {
+    display: flex;
+    flex-direction: column;
+    scrollbar-color: #00eeeeee;
+}
+
+.shopCarList {
+    width: 100%;
+    max-height: 500px;
+    top: 0;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.popupBox .backTips {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 99;
+}
+.popupBox label {
+    width: 100%;
+    margin-top: 30px;
+    height: 50px;
+    font-weight: 600;
+    padding: 0 20px;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-80%) scale(0.2);
+        border-radius: 1000px;
+    }
+
+    50% {
+        transform: translateY(-60%) scale(0.3);
+        border-radius: 300px;
+    }
+
+    100% {
+        transform: translateY(0%) scale(1);
+        border-radius: 0px;
+    }
+}
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes lengthRight {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes shakeBox {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(16deg);
+    }
+
+    80% {
+        transform: rotate(-16deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+

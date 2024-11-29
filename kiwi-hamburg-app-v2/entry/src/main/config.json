@@ -1,0 +1,110 @@
+{
+  "app": {
+    "vendor": "example",
+    "bundleName": "com.example.kiwishop",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+    "default": {
+      "network": {
+        "cleartextTraffic": true
+      }
+    }
+  },
+  "module": {
+    "mainAbility": "com.example.kiwishop.MainAbility",
+    "deviceType": [
+      "phone"
+    ],
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "metaData": {
+          "customizeData": [
+            {
+              "extra": "",
+              "name": "hwc-theme",
+              "value": "androidhwext:style/Theme.Emui.Light.NoTitleBar"
+            }
+          ]
+        },
+        "visible": true,
+        "name": "com.example.kiwishop.MainAbility",
+        "icon": "$media:icon",
+        "configChanges": [
+          "orientation"
+        ],
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ],
+    "distro": {
+      "moduleType": "entry",
+      "installationFree": false,
+      "deliveryWithInstall": true,
+      "moduleName": "entry"
+    },
+    "package": "com.example.kiwishop",
+    "name": ".MyApplication",
+    "colorMode": "light",
+    "js": [
+      {
+        "pages": [
+          "pages/GuidePage/GuidePage",
+          "pages/IndexPage/IndexPage",
+          "pages/ShopPage/ShopPage",
+          "pages/PayPage/PayPage",
+          "pages/LoginPage/LoginPage",
+          "pages/AddressPage/AddressPage",
+          "pages/ChatPage/ChatPage",
+          "pages/MyInfoPage/MyInfoPage",
+          "pages/OrdersPage/OrdersPage",
+          "pages/CardPackPage/CardPackPage",
+          "pages/CommentPage/CommentPage",
+          "pages/GoodDetailPage/GoodDetailPage",
+          "pages/BalancePage/BalancePage",
+          "pages/OrderDetailPage/OrderDetailPage"
+        ],
+        "name": "default",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": false
+        }
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.LOCATION"
+      },
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.DOWNLOAD_SESSION_MANAGER"
+      },
+      {
+        "name": "ohos.permission.MANAGE_ENHANCER_WIFI"
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.SET_NETWORK_INFO"
+      }
+    ]
+  }
+}

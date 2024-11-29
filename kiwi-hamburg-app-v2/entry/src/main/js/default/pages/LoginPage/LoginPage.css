@@ -1,0 +1,171 @@
+.container {
+    background-image: url("/common/images/home_bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.LoadingBox {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    z-index: 99;
+
+    width: 30%;
+    aspect-ratio: 1;
+    padding:0 10px 20px 10px;
+    font-size: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 26px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #99a5a5a5;
+}
+.LoadingBox image {
+    border-radius: 26px;
+}
+
+.swiper {
+    indicator-color: #cc808080;
+    indicator-size: 0px;
+    indicator-selected-color: #473ee7;
+}
+
+.backLogin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 40px;
+}
+
+.LoginFrom, .newFrom {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: 1s slideInBottom;
+    animation-timing-function: ease-in-out;
+}
+
+.LoginFrom label, .newFrom label {
+    font-size: 90px;
+    color: #ffb2dd65;
+    margin-top: 20px;
+    letter-spacing: 15px;
+}
+
+.inputs {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs .input {
+    position: relative;
+    width: 500px;
+    height: 120px;
+}
+
+.inputs .input>input {
+    width: 100%;
+    height: 100%;
+    background-color: #cce5e5e5;
+    margin: 20px 0;
+    padding: 0fp 70px;
+    font-size: 28px;
+}
+
+.inputs image {
+    position: absolute;
+    left: 20px;
+    height: 100%;
+    width: 40px;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.submitBtn button {
+    padding: 10px 35px;
+    margin: 20px 30px;
+    border-radius: 35px;
+    font-size: 36px;
+}
+
+.loginBtn {
+    box-shadow: -5px -5px 10px #ff94b2ef;
+}
+
+.loginBtn:active {
+    box-shadow: 0px 0px 10px #ff94b2ef;
+}
+
+.newBtn {
+    text-color: black;
+    background-color: #fff;
+    box-shadow: -5px -5px 10px #ffc4c4c4;
+}
+
+.newBtn:active {
+    box-shadow: 0px 0px 10px #eee;
+}
+
+.addUserBtn {
+    width: 500px;
+    height: 80px;
+    padding: 10px;
+    margin: 20px 30px;
+    border-radius: 40px;
+}
+
+.checkTips {
+    font-size: 24px;
+    text-align: right;
+    color: firebrick;
+    padding-right: 20px;
+    color: brown;
+}
+
+
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -30px, 0) scaleY(1.1);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -15px, 0) scaleY(1.05);
+    }
+
+    80% {
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 0, 0) scaleY(0.95);
+    }
+
+    90% {
+        transform: translate3d(0, -4px, 0) scaleY(1.02);
+    }
+}

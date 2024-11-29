@@ -1,0 +1,90 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.backLogin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 40px;
+}
+.topBg {
+    position: absolute;
+    left: 10px;
+    width: 100%;
+    object-fit: contain;
+    filter: blur(10px);
+}
+.title {
+    font-size: 62px;
+    font-weight: 600;
+    color: #eee;
+}
+.inputs {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+.inputs .input {
+    position: relative;
+    width: 500px;
+    height: 120px;
+}
+.inputs .input>input {
+    width: 100%;
+    height: 100%;
+    background-color: #cce5e5e5;
+    margin: 20px 0;
+    padding: 0fp 70px;
+    font-size: 28px;
+}
+
+.inputs image {
+    position: absolute;
+    left: 20px;
+    height: 100%;
+    width: 40px;
+    object-fit: contain;
+    z-index: 1;
+}
+.submitBtns button {
+    padding: 10px 40px;
+    margin: 20px 30px;
+    border-radius: 16px;
+    font-size: 30px;
+}
+.submitBtn {
+    box-shadow: -5px -5px 10px #ff94b2ef;
+}
+.submitBtn:active {
+    box-shadow: 0px 0px 10px #ff94b2ef;
+}
+.newBtn {
+    text-color: black;
+    background-color: #fff;
+    box-shadow: -5px -5px 10px #ffc4c4c4;
+}
+.newBtn:active {
+    box-shadow: 0px 0px 10px #eee;
+}
+.checkTips {
+    font-size: 24px;
+    text-align: right;
+    color: firebrick;
+    padding-right: 20px;
+    color: brown;
+}
+.editBtn {
+    background-color: #fff13636;
+}
+.backRouter {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+}

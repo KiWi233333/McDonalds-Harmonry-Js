@@ -1,0 +1,133 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    scrollbar-color: #00ffffff;
+    padding: 0px 30px 50px 30px;
+    background-color: #66eeeeee;
+}
+
+.car {
+    border-radius: 22px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px #80666666;
+    margin: 15px 0;
+    padding: 20px 30px;
+}
+
+.LoadingBox {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: 300px;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 99;
+}
+
+/* 顶部*/
+
+.top {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    align-items: center;
+}
+
+.top image {
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.topBg {
+    width: 500px;
+    aspect-ratio: 1;
+    position: absolute;
+    right: -25%;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+/*状态*/
+.topState {
+    padding: 20px;
+    padding-bottom: 0;
+    flex-direction: column;
+    font-size: 26px;
+}
+.center {
+    flex-direction: column;
+}
+.center .shopName {
+    letter-spacing: 4px;
+    background-image: url('/common/icon/back_icon3.png');
+    padding-right: 25px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: right center;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+.center .good {
+    width: 100%;
+    margin: 10px 0;
+}
+.center .good image {
+    width: 120px;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+.center .good .price{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    font-size: 32px;
+    font-weight: 600;
+}
+.center .centerBottom {
+    width: 100%;
+    flex-direction: column;
+    border-top: 1px dashed grey;
+    padding: 20px 0;
+    margin: 20px 0px;
+    margin-bottom: 0;
+}
+.center .centerBottom div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.bottom {
+    flex-direction: column;
+}
+.bottom div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px dashed #cc808080;
+}
+
+/* 按钮 */
+.btns {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    box-shadow: 0px -5px 20px #66676767;
+}
+.btns {
+
+}

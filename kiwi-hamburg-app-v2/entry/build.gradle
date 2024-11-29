@@ -1,0 +1,37 @@
+apply plugin: 'com.huawei.ohos.hap'
+apply plugin: 'com.huawei.ohos.decctest'
+//For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#section1112183053510
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('E:\\CodingLife\\Project\\KiwiHamBurg\\kiwi-hamburg-app\\entry\\keys.p12')
+            storePassword '0000001CD81A08C788846BF83A244D3F7442D10A8DB2842FA88C4F256D8F07C5D669E8D10A59FE7064FB7109'
+            keyAlias = 'key0'
+            keyPassword '0000001CC21ED33259CF6A952B39379AFC5A31CB15E979D4966263A6859B57EB1A5E038F3163C1257D0042CE'
+            signAlg = 'SHA256withECDSA'
+            profile file('E:\\CodingLife\\Project\\KiwiHamBurg\\kiwi-hamburg-app\\entry\\profile-debugDebug.p7b')
+            certpath file('E:\\CodingLife\\Project\\KiwiHamBurg\\kiwi-hamburg-app\\entry\\kiwi-hamburg-debug.cer')
+        }
+    }
+    compileSdkVersion 7
+    defaultConfig {
+        compatibleSdkVersion 7
+    }
+    buildTypes {
+        release {
+            proguardOpt {
+                proguardEnabled false
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testImplementation 'junit:junit:4.13.1'
+    ohosTestImplementation 'com.huawei.ohos.testkit:runner:2.0.0.400'
+}
+decc {
+    supportType = ['html', 'xml']
+}

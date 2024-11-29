@@ -1,0 +1,73 @@
+<div class="context context1">
+    <div class="homeTopBg"></div>
+    <div class="homeTop">
+
+    <!-- 头部 -->
+        <div class="topTitle">
+            <label>{{ timeDotCom }}好，{{ nickName? nickName : '堡堡'}}！</label>
+            <text if="{{ isLoginState }}">登录获取更多</text>
+            <text if="{{ ! isLoginState }}">朋友就是一起吃吃乐乐</text>
+        </div>
+        <div class="shopCars car">
+            <image class="carsBg" src="/common/images/home_shop_bg.png"></image>
+            <div class="leftCars" @click="{{toShopPage('OUT')}}" click-effect="spring-medium">
+                <label>外卖</label>
+                <text>外送有优惠</text>
+            </div>
+            <div style="border : 1px solid grey; height : 70%;"></div>
+            <div class="rightCars" @click="{{toShopPage('IN')}}" click-effect="spring-medium">
+                <label>到店取餐</label>
+                <text>满分汉堡超好吃</text>
+            </div>
+        </div>
+    </div>
+    <div class="homeCenter">
+
+    <!-- 分类 -->
+        <div class="sortCars">
+            <div class="sortCar car" click-effect="spring-small" @click="{{toShopPage('OUT')}}">
+                <label>{{ sortCars[0].sort }}</label>
+                <text>{{ sortCars[0].title }}</text>
+                <image src="{{ sortCars[0].bg }}"></image>
+            </div>
+            <div class="sortCar car" click-effect="spring-small" @click="{{toShopPage('OUT')}}">
+                <label>{{ sortCars[1].sort }}</label>
+                <text>{{ sortCars[1].title }}</text>
+                <image src="{{ sortCars[1].bg }}"></image>
+            </div>
+            <div class="sortCar car" click-effect="spring-small" @click="{{toCardPackPage()}}">
+                <label>{{ sortCars[2].sort }}</label>
+                <text>{{ sortCars[2].title }}</text>
+                <image src="{{ sortCars[2].bg }}"></image>
+            </div>
+
+        </div>
+
+        <!-- 轮播图 -->
+        <swiper class="homeActives car">
+            <image src="../../images/background.jpg"></image>
+        </swiper>
+        <div class="videoCar car">
+            <image src="/common/images/burger_bg1.jpg" if="{{ ! isHomeVideoPlay }}"></image>
+        <!--自动循环播放视频-->
+            <video src="/common/raw/home_burger_video2.mp4"
+                   style="object-fit : cover;"
+                   muted="true"
+                   autoplay="true"
+                   controls="false"
+                   @start="isPlayImgNone"
+                   @finish="isPauseImgNone">
+            </video>
+        </div>
+    </div>
+    <label class="homeNews" >最新活动</label>
+    <div for="{{ (i, item) in activesList }}"
+         tid="item.good_id"
+         @click="{{toActivesPage(item.good_id)}}"
+         class="activesList car"
+         click-effect="spring-large">
+<!--        <image src="{{getImgUrl(1,item.imgUrl)}}"></image>-->
+        <image src="/common/images/res/{{item.imgUrl}}"></image>
+    </div>
+
+</div>

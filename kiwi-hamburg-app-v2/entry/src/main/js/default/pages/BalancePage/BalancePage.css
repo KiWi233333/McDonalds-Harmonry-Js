@@ -1,0 +1,179 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+    scrollbar-color: #00ffffff;
+}
+.car {
+    border-radius: 22px;
+    background-color: white;
+    box-shadow: 10px 10px 10px #cccfcfcf;
+    margin: 15px 0;
+    padding: 20px 30px;
+}
+.LoadingBox {
+    width: 100%;
+    height: 300px;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 99;
+}
+
+/* 顶部*/
+.top {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    align-items: center;
+    background-color:#fff;
+    padding: 0 20px;
+}
+.top image {
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    left: 20px;
+    padding: 10px;
+}
+
+
+/*钱包*/
+.moneysCar {
+    width: 100%;
+    height: 280px;
+    border-radius: 26px;
+    background-color: #ffc811;
+    color: #653b13;
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+    margin: 20px 30px;
+    animation-timing-function: ease-in;
+    animation: 1s slideInBottom;
+}
+.moneysCar .moneys {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+    z-index: 2;
+}
+.moneysCar label {
+    margin-top: 10px;
+    font-size: 72px;
+    font-weight: 700;
+}
+.moneysCar .moneyIcon { 
+    width: 140px;
+    aspect-ratio: 1;
+    position: absolute;
+    z-index: 2;
+    right: 20px;
+    top: 45px;
+}
+.center {
+    width: 100%;
+    border-radius: 0px 0px 26px 26px;
+    background-color: #fff;
+    margin-top: -50px;
+    box-shadow: 0px -10px 10px #80acacac;
+}
+.center {
+    flex-wrap: wrap;
+    padding: 50px 30px;
+    justify-content: center;
+    align-items: center;
+}
+.centerTitleBox {
+    width: 100%;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+.centerTitle {
+    text-align: left;
+    z-index: 2;
+    font-size: 36px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.center .box {
+    width: 200px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid #99808080;
+    border-radius: 16px;
+    font-size: 36px;
+    box-shadow: 5px 5px 10px #eee;
+}
+.center .box:active {
+    background-color: #ffc812;
+    border: 2px solid #eee;
+}
+
+
+/*确认框弹窗*/
+#checkPrompt {
+    width: 80%;
+    margin-bottom: 40%;
+}
+.checkPromptBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+}
+.checkPromptBox label {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 70px 0;
+    text-align: center;
+}
+.checkPromptBox .btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 10px 20px;
+}
+.checkPromptBox button{
+    width: 40%;
+    height: 60px;
+    font-weight: 600;
+    font-size: 26px;
+    border-radius: 40px;
+    background-color: #fcb900;
+    text-color: #66271c;
+}
+.btn .btn2 {
+    border: 1px solid gray;
+    text-color: #66271c;
+    background-color: #fff;
+}
+
+#success {
+    margin-bottom: 40%;
+    width: 300px;
+    height: 300px;
+    overflow: hidden ;
+}
+
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

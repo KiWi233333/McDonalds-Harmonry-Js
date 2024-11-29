@@ -1,0 +1,199 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    font-size: 28px;
+    margin-top: 80px;
+    margin-bottom: 160px;
+    scrollbar-color: #00ffffff;
+    width: 100%;
+}
+.LoadingBox {
+    position: fixed;
+    margin-top: 40%;
+    left: 36%;
+    width: 200px;
+    height: 200px;
+    background-image: url("/common/raw/loading_bg.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+image {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+}
+.car {
+    border-radius: 26px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #ccd0d0d0;
+    margin: 15px 0;
+    padding: 20px 30px;
+}
+
+/* 顶部*/
+.top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 600;
+    align-items: center;
+    background-color:#fff;
+    padding: 0 20px;
+}
+
+/*地址列表*/
+.center {
+    margin-top: 40px;
+}
+.addressList {
+    width: 100%;
+}
+.addressList .item{
+    width: 100%;
+    margin: 20px 0px;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addressList .itemLeft {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fc4e07;
+    border-radius: 80px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 34px;
+}
+.itemCenter div .defaultTip {
+    height: 30px;
+    border-radius: 8px;
+    font-size: 24px;
+    color: #f85005;
+    border: 1px solid #f85005;
+    padding: 0 8px;
+    text-align: center;
+}
+.item .itemCenter {
+    width: 65%;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+.item .itemCenter label {
+    padding-right: 12px;
+}
+
+/*添加地址*/
+.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    background-color: #fcb900;
+    texton-color: black;
+    color: black;
+    margin: 40px 40px;
+}
+
+/*地址表单*/
+.addressFrom {
+    width: 90%;
+    height: 650px;
+    margin-bottom: 30%;
+}
+.addressFrom .from {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.fromTop {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+.fromTop label {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.fromTop .closeBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 70px;
+    width: 70px;
+}
+/*表单部分*/
+.fromCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 30px;
+    color: grey;
+    texton-color: grey;
+    font-size: 25px;
+}
+.fromCenter .inputBox {
+    margin: 10px 0;
+    height: 100px;
+}
+.fromCenter input {
+    width: 70%;
+    background-color: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid grey;
+    margin-left: 40px;
+    padding: 20px 5px;
+}
+.switchBox {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.from .submitBtn {
+    width: 90%;
+    height: 70px;
+    font-size: 28px;
+    text-color: black;
+    background-color: #feb801;
+}
+
+@keyframes opacityIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

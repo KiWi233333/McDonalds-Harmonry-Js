@@ -1,0 +1,4 @@
+<element src="../../common/components/orderList/orderList.hml" name="orderList"></element>
+<div class="container">
+    <orderlist is-pay-page-router="{{isPayPageRouter}}" hidden-back="{{isPayPageRouter}}"></orderlist>
+</div>

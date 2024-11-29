@@ -1,0 +1,75 @@
+<element src="../../components/commentCard/commentCard.hml" name="commentCard"></element>
+<element src="../../components/suggestCard/suggestCard.hml" name="suggestCard"></element>
+
+<div class="context context2">
+<!--  遮罩  -->
+    <image src="/common/raw/re_loading_bg.gif" class="loading" show="{{isHttpAnim || isHttpAnim2}}"></image>
+<!--  顶部  -->
+    <div class="top">
+        <label class="title">堡堡社区</label>
+        <text style="border-bottom:6px solid #ffbc0d;font-size: 26px;">
+            欢迎，{{nickName}} !
+        </text>
+<!--   烟花    -->
+        <image src="/common/raw/success_bg1.gif"></image>
+    </div>
+<!--  卡片  -->
+    <div class="centerTop" >
+        <div class="topLeft car" click-effect="spring-large" @click="toShopPage('OUT')">
+            <swiper autoplay="true">
+                <div for="{{ (i, item) in activesList }}" if="{{activesList[0] && i<4}}">
+                    <image src="/common/images/res/{{item.imgUrl}}"></image>
+                </div>
+            </swiper>
+        </div>
+        <div class="topRight">
+        <!--    1\钱包    -->
+            <div class="car cardBox" style="margin-top: 10px;"
+                 click-effect="spring-small" @click="toBalancePage">
+                <div style="flex-direction: column;padding: 20px 0;">
+                    <label>钱包</label>
+                    <text style="font-size: 20px;font-weight: 500;color: #b2653a14;">余额￥{{balance}}</text>
+                </div>
+                <image src="/common/raw/card_flow_bg2.gif"></image>
+            </div>
+        <!--    2\卡卷  -->
+            <div class="car cardBox cur" style="margin-top: 10px;"
+                 click-effect="spring-small" @click="toCardPackPage">
+                <div style="flex-direction: column;padding: 20px 0;">
+                    <label>卡卷</label>
+                    <text style="font-size: 20px;font-weight: 500;color: #b2653a14;">查看你的优惠卷</text>
+                </div>
+                <image src="/common/raw/burger_dance.gif"></image>
+            </div>
+        </div>
+    </div>
+<!--  热销商品  -->
+    <div class="centerCenter car">
+        <label>{{"热销商品"}}</label>
+        <list class="list" if="{{!isHttpAnim}}">
+            <list-item for="{{ (i, item) in goodsList }}" tid="i"
+                       if="{{i<5}}"
+                       @click="toShopPage('OUT')" 
+                       click-effect="spring-small" clickeffect="false">
+                <div class="item">
+                    <text class="count" if="{{i<3}}">{{ i+1 }}</text>
+                    <image src="/common/images/res/{{item.imgUrl}}"
+                           style="object-fit: contain;"
+                           class="car"></image>
+                    <label style="margin: 15px 0;">{{ item.good_name }}</label>
+                </div>
+            </list-item>
+        </list>
+    </div>
+
+<!--  网友评论  -->
+    <label class="commentTitle">{{"网友推荐"}}</label>
+    <div class="comment" if="{{ !isHttpAnim2 && !isHttpAnim }}">
+        <list if="{{ !isHttpAnim2 }}" scrollpage="true" cachedcount="2">
+            <list-item clickeffect="false" for="{{ (i, item) in commentsList }}">
+                <suggestcard item="{{ item }}" goods-list="{{goodsList}}" actives-list="{{activesList}}"></suggestcard>
+            </list-item>
+        </list>
+    </div>
+
+</div>
