@@ -14,3 +14,6 @@
 /entry/.preview
 .cxx
 /node_modules
+/kiwi-hamburg-api
+/kiwi-hamburg-java-api
+/res
